@@ -48,9 +48,28 @@ public class Player : MonoBehaviour
 
     IEnumerator Move()
     {
+        int row = GameManager.Instance().row;
+        int column = GameManager.Instance().column;
+
+        float maxX = (row / 2) * distance + (distance / 2) * (row % 2 - 1);
+        float maxY = (column / 2) * distance + (distance / 2) * (column % 2 - 1);
+
+        Vector3 tempPos;
+
         while (isMoving)
         {
-            transform.position += direction * distance;
+            tempPos = transform.position + direction * distance;
+
+            if (tempPos.x > maxX + 0.03)
+                transform.position = new Vector3(-maxX, tempPos.y, 0);
+            else if (tempPos.x < -maxX - 0.03)
+                transform.position = new Vector3(maxX, tempPos.y, 0);
+            else if (tempPos.y > maxY + 0.03)
+                transform.position = new Vector3(tempPos.x, -maxY, 0);
+            else if (tempPos.y < -maxY - 0.03)
+                transform.position = new Vector3(tempPos.x, maxY, 0);
+            else
+                transform.position = tempPos;
 
             yield return new WaitForSeconds(speed);
         }
