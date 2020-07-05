@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
     }
 
     TileMaker tileMaker;
+    ToppingSpawner toppingSpawner;
     public Player player;
 
     public int row, column;
-    public float speed;
+    public float speed, toppingdelay;
+
+    [HideInInspector]
+    public float tileSize;
 
     private void Awake()
     {
@@ -33,6 +37,13 @@ public class GameManager : MonoBehaviour
         tileMaker = GetComponent<TileMaker>();
         tileMaker.MakeBoard(row, column);
 
-        player.Init(tileMaker.TileSize, speed);
+        toppingSpawner = GetComponent<ToppingSpawner>();
+        toppingSpawner.StartPooling(toppingdelay);
+
+        this.tileSize = tileMaker.TileSize;
+
+        player.Init(tileSize, speed);
+
+
     }
 }
