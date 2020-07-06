@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     public int row, column;
-    public float speed, toppingdelay;
+    public float speed, toppingdelay, destroydelay;
 
     [HideInInspector]
     public float tileSize;
@@ -37,13 +37,19 @@ public class GameManager : MonoBehaviour
         tileMaker = GetComponent<TileMaker>();
         tileMaker.MakeBoard(row, column);
 
-        toppingSpawner = GetComponent<ToppingSpawner>();
-        toppingSpawner.StartPooling(toppingdelay);
-
         this.tileSize = tileMaker.TileSize;
 
+        toppingSpawner = GetComponent<ToppingSpawner>();
+        toppingSpawner.StartPooling(toppingdelay, destroydelay);
+
         player.Init(tileSize, speed);
+    }
 
+    public void GameOver()
+    {
+        player.GameOver();
+        toppingSpawner.Stop();
 
+        Debug.Log("Game Over");
     }
 }

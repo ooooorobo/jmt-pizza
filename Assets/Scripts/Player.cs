@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Tail
 {
     bool isMoving = true;
     float distance;
@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     Vector3 direction;
 
     Transform Arrow;
+
+    public GameObject Tail;
+    public Tail last;
 
     private void Start()
     {
@@ -46,6 +49,11 @@ public class Player : MonoBehaviour
             }
     }
 
+    public void GameOver()
+    {
+        isMoving = false;
+    }
+
     IEnumerator Move()
     {
         int row = GameManager.Instance().row;
@@ -61,17 +69,37 @@ public class Player : MonoBehaviour
             tempPos = transform.position + direction * distance;
 
             if (tempPos.x > maxX + 0.03)
-                transform.position = new Vector3(-maxX, tempPos.y, 0);
+                Move(new Vector3(-maxX, tempPos.y, 0));
             else if (tempPos.x < -maxX - 0.03)
-                transform.position = new Vector3(maxX, tempPos.y, 0);
+                Move(new Vector3(maxX, tempPos.y, 0));
             else if (tempPos.y > maxY + 0.03)
-                transform.position = new Vector3(tempPos.x, -maxY, 0);
+                Move(new Vector3(tempPos.x, -maxY, 0));
             else if (tempPos.y < -maxY - 0.03)
-                transform.position = new Vector3(tempPos.x, maxY, 0);
+                Move(new Vector3(tempPos.x, maxY, 0));
             else
-                transform.position = tempPos;
+                Move(tempPos);
 
             yield return new WaitForSeconds(speed);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        switch (col.tag)
+        {
+            case "Topping":
+                col.gameObject.SetActive(false);
+                Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
+                newtail.GetComponent<SpriteRenderer>().sprite = col.GetComponent<SpriteRenderer>().sprite;
+
+                if (next == null) next = newtail;
+                else last.next = newtail;
+                last = newtail;
+                break;
+
+            case "Tail":
+                GameManager.Instance().GameOver();
+                break;
         }
     }
 }

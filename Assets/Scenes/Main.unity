@@ -141,6 +141,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topping: {fileID: 6071970254904055127, guid: 4f7d308ddb61946bd9128ef603ffeabe, type: 3}
   toppingPool: []
+  toppingSprites:
+  - {fileID: 21300000, guid: f6982c6bbe3604bc4aeae8980da42231, type: 3}
+  - {fileID: 21300000, guid: 688e01b0176bf4a7ba4fefbf625e3c06, type: 3}
+  - {fileID: 21300000, guid: 4dfc4e653a0c44d0985b6b2a799a85a1, type: 3}
+  - {fileID: 21300000, guid: 04b1262d8d4e441668a6394e4945b7ef, type: 3}
+  - {fileID: 21300000, guid: 23974faa6685f4592b9d69ea965407e1, type: 3}
+  - {fileID: 21300000, guid: a86a96fe8a8124ad9b8c7c1eddd4cbe3, type: 3}
+  - {fileID: 21300000, guid: 586028bc1baa940949cc558339ee0291, type: 3}
+  - {fileID: 21300000, guid: 249e585625b2a410792bb432a977cae1, type: 3}
+  - {fileID: 21300000, guid: 173477bd620f64b609cb8edd9c0e9470, type: 3}
+  - {fileID: 21300000, guid: dec39996095554b4984a1a64f7cacd78, type: 3}
 --- !u!114 &230881880 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7288275521039506029, guid: 308df295b1ba04281a4778e4be2155f4,
@@ -298,6 +309,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7288275521039506029, guid: 308df295b1ba04281a4778e4be2155f4,
+        type: 3}
+      propertyPath: Tail
+      value: 
+      objectReference: {fileID: 5458088308952040738, guid: 70eb75115f54541b8b1d6380e8903197,
+        type: 3}
     - target: {fileID: 8356817185706412598, guid: 308df295b1ba04281a4778e4be2155f4,
         type: 3}
       propertyPath: m_Name
@@ -395,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
         type: 3}
       propertyPath: toppingdelay
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7017314304689949489, guid: bcec913a39c2347728ccd9c15b134d7c,
         type: 3}
