@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,8 +19,26 @@ public class GameManager : MonoBehaviour
     ToppingSpawner toppingSpawner;
     public Player player;
 
-    public int row, column;
-    public float speed, toppingdelay, destroydelay;
+    [Header("Board")]
+    public int row;
+    public int column;
+
+    [Header("Player")]
+    public float speed;
+    public float accelerate;
+
+    [Header("Spawn Topping")]
+    public float toppingdelay;
+    public float destroydelay;
+
+    [Header("Score")]
+    public int oToppingScore;
+    public int xToppingScore;
+    public int initialScore;
+    private int score;
+
+    [Header("UI")]
+    public Text txtScore;
 
     [HideInInspector]
     public float tileSize;
@@ -34,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        score = initialScore;
+
         tileMaker = GetComponent<TileMaker>();
         tileMaker.MakeBoard(row, column);
 
@@ -42,7 +63,15 @@ public class GameManager : MonoBehaviour
         toppingSpawner = GetComponent<ToppingSpawner>();
         toppingSpawner.StartPooling(toppingdelay, destroydelay);
 
-        player.Init(tileSize, speed);
+        player.Init(tileSize, speed, accelerate);
+    }
+
+    public void ChangeScore(bool isO)
+    {
+        score += isO ? oToppingScore : xToppingScore;
+        txtScore.text = "Score: " + score;
+        if (score < 0)
+            GameOver();
     }
 
     public void GameOver()

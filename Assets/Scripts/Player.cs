@@ -7,6 +7,7 @@ public class Player : Tail
     bool isMoving = true;
     float distance;
     float speed;
+    float accel;
     Vector3 direction;
 
     Transform Arrow;
@@ -19,12 +20,13 @@ public class Player : Tail
         Arrow = transform.GetChild(0);
     }
 
-    public void Init(float distance, float speed)
+    public void Init(float distance, float speed, float accel)
     {
         this.distance = distance;
         direction = new Vector3(0, 1f, 0);
 
         this.speed = speed;
+        this.accel = accel;
 
         StartCoroutine("Move");
     }
@@ -37,13 +39,19 @@ public class Player : Tail
         if (x != 0 || y != 0)
             if (x != 0)
             {
-                direction = new Vector3(1f, 0, 0) * x;
+                Vector3 temp = new Vector3(1f, 0, 0) * x;
+                if (direction == temp * -1) return;
+                else direction = temp;
+
                 Arrow.localPosition = new Vector3(0.35f, 0, 0) * x;
                 Arrow.rotation = Quaternion.Euler(0, 0, 90 * x * -1);
             }
             else
             {
-                direction = new Vector3(0, 1f, 0) * y;
+                Vector3 temp = new Vector3(0, 1f, 0) * y;
+                if (direction == temp * -1) return;
+                else direction = temp;
+
                 Arrow.localPosition = new Vector3(0, 0.35f, 0) * y;
                 Arrow.rotation = Quaternion.Euler(0, 0, 90 * (y - 1));
             }
@@ -88,13 +96,18 @@ public class Player : Tail
         switch (col.tag)
         {
             case "Topping":
+                GameManager.Instance().ChangeScore(col.GetComponent<Topping>().isO);
                 col.gameObject.SetActive(false);
+
                 Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
                 newtail.GetComponent<SpriteRenderer>().sprite = col.GetComponent<SpriteRenderer>().sprite;
 
                 if (next == null) next = newtail;
                 else last.next = newtail;
                 last = newtail;
+
+                speed -= accel;
+
                 break;
 
             case "Tail":

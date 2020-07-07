@@ -49,6 +49,9 @@ TagManager:
   - name: Topping
     uniqueID: 3289230729
     locked: 0
+  - name: Tail
+    uniqueID: 1335261375
+    locked: 0
   - name: Player
     uniqueID: 1381973799
     locked: 0
