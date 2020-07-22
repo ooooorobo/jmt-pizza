@@ -9,6 +9,7 @@ public class ToppingSpawner : MonoBehaviour
     int row, column;
     float tileSize;
     public GameObject topping;
+    public GameObject oven;
     private GameObject toppingParent;
     public Transform oParent;
     public Transform xParent;
@@ -22,7 +23,7 @@ public class ToppingSpawner : MonoBehaviour
     private bool canMake = true;
 
 
-    public void StartPooling(float spawnDelay, float destroyDelay)
+    public void InitSpawner(float spawnDelay, float destroyDelay)
     {
         this.row = GameManager.Instance().row;
         this.column = GameManager.Instance().column;
@@ -32,7 +33,9 @@ public class ToppingSpawner : MonoBehaviour
         this.destroyDelay = destroyDelay;
 
         isOTopping = new bool[toppingSprites.Length];
-        for (int i = 0; i < isOTopping.Length; i++)
+        isOTopping[0] = true; // cheese is always true
+
+        for (int i = 1; i < isOTopping.Length; i++)
         {
             isOTopping[i] = (Random.Range(0, 2) == 1);
 
@@ -49,8 +52,6 @@ public class ToppingSpawner : MonoBehaviour
         toppingParent = new GameObject("toppingParent");
 
         MakePool();
-
-        StartCoroutine("MakeTopping", 2f);
     }
 
     private void MakePool()
@@ -67,9 +68,21 @@ public class ToppingSpawner : MonoBehaviour
         }
     }
 
+    public void MakeOven() 
+    {
+        Vector3 position = FindPosition();
+        GameObject ovenInstance = Instantiate(oven, position, Quaternion.identity);
+    }
+
     public void Stop()
     {
         canMake = false;
+    }
+
+    public void StartSpawn() 
+    {
+        canMake = true;
+        StartCoroutine("MakeTopping", 2f);
     }
 
     public Vector3 FindPosition()
@@ -106,6 +119,10 @@ public class ToppingSpawner : MonoBehaviour
                 int index = Random.Range(0, toppingSprites.Length);
                 temp.GetComponent<SpriteRenderer>().sprite = toppingSprites[index];
                 temp.GetComponent<Topping>().isO = isOTopping[index];
+                
+                if (index == 0) temp.GetComponent<Topping>().isCheese = true;
+                else temp.GetComponent<Topping>().isCheese = false;
+                
                 temp.SetActive(true);
                 poolTail++;
 

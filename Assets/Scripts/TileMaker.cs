@@ -25,7 +25,7 @@ public class TileMaker : MonoBehaviour
         startX = (-1 * (column / 2) * tileSize) - (tileSize / 2) * (column % 2 - 1);
         startY = (row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1);
 
-        GameObject tileParent = new GameObject("tileparent");
+        Transform tileParent = new GameObject("tileparent").transform;
 
         // tile을 row, column만큼 spawn
         for (int x = 0; x < column; x++)
@@ -34,8 +34,10 @@ public class TileMaker : MonoBehaviour
             {
                 GameObject newTile = Instantiate(tile, new Vector3(startX + x * tileSize, startY - y * tileSize, 0), Quaternion.identity);
                 newTile.GetComponent<SpriteRenderer>().sprite = tileColors[(x * column + y) % 2];
-                newTile.transform.parent = tileParent.transform;
+                newTile.transform.parent = tileParent;
             }
         }
+
+        //tileParent.position += new Vector3(0, 0, 0);
     }
 }

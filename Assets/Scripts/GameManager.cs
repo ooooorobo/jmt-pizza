@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,10 +36,15 @@ public class GameManager : MonoBehaviour
     public int oToppingScore;
     public int xToppingScore;
     public int initialScore;
+    public int cheeseGoal;
     private int score;
+    private int cheese;
 
     [Header("UI")]
     public Text txtScore;
+    public Text cheeseScore;
+    public Text clearScoreTxt;
+    public GameObject clearPanel;
 
     [HideInInspector]
     public float tileSize;
@@ -61,24 +67,53 @@ public class GameManager : MonoBehaviour
         this.tileSize = tileMaker.TileSize;
 
         toppingSpawner = GetComponent<ToppingSpawner>();
-        toppingSpawner.StartPooling(toppingdelay, destroydelay);
+        toppingSpawner.InitSpawner(toppingdelay, destroydelay);
 
         player.Init(tileSize, speed, accelerate);
     }
 
-    public void ChangeScore(bool isO)
+    public void ChangeScore(Topping t )
     {
-        score += isO ? oToppingScore : xToppingScore;
+        score += t.isO ? oToppingScore : xToppingScore;
+        if (t.isCheese) cheese++;
+
         txtScore.text = "Score: " + score;
+        cheeseScore.text = "Cheese: " + cheese;
+
         if (score < 0)
             GameOver();
+        
+        if (cheese == cheeseGoal) toppingSpawner.MakeOven();
+    }
+
+    public void Stop() 
+    {
+        player.Stop();
+        toppingSpawner.Stop();
+    }
+
+    public void StartGame() 
+    {
+        player.StratMove();
+        toppingSpawner.StartSpawn();
     }
 
     public void GameOver()
     {
-        player.GameOver();
-        toppingSpawner.Stop();
+        Stop();
 
         Debug.Log("Game Over");
+    }
+
+    public void GameClear()
+    {
+        Stop();
+        clearScoreTxt.text = score + clearScoreTxt.text;
+        clearPanel.SetActive(true);
+    }
+
+    public void Restart() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

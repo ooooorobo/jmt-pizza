@@ -27,14 +27,11 @@ public class Player : Tail
 
         this.speed = speed;
         this.accel = accel;
-
-        StartCoroutine("Move");
     }
 
-    private void Update()
-    {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+    public void SetDirection(string dir) {
+        int x = dir[0] - '1';
+        int y = dir[1] - '1';
 
         if (x != 0 || y != 0)
             if (x != 0)
@@ -57,9 +54,24 @@ public class Player : Tail
             }
     }
 
-    public void GameOver()
+    private void Update()
+    {
+        // For debug in PC
+        int x = (int) Input.GetAxisRaw("Horizontal");
+        int y = (int) Input.GetAxisRaw("Vertical");
+
+        SetDirection((x + 1) + "" + (y + 1));
+    }
+
+    public void Stop()
     {
         isMoving = false;
+    }
+
+    public void StratMove()
+    {
+        isMoving = true;
+        StartCoroutine("Move", speed);
     }
 
     IEnumerator Move()
@@ -96,7 +108,7 @@ public class Player : Tail
         switch (col.tag)
         {
             case "Topping":
-                GameManager.Instance().ChangeScore(col.GetComponent<Topping>().isO);
+                GameManager.Instance().ChangeScore(col.GetComponent<Topping>());
                 col.gameObject.SetActive(false);
 
                 Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
@@ -112,6 +124,10 @@ public class Player : Tail
 
             case "Tail":
                 GameManager.Instance().GameOver();
+                break;
+
+            case "Oven":
+                GameManager.Instance().GameClear();
                 break;
         }
     }

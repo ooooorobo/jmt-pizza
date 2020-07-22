@@ -4,6 +4,7 @@ using UnityEngine;
 public class Topping : MonoBehaviour
 {
     public bool isO;
+    public bool isCheese;
 
     public IEnumerator Delay(float destroyDelay)
     {
