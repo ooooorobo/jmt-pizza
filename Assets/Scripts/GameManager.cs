@@ -23,8 +23,10 @@ public class GameManager : MonoBehaviour
     [Header("Board")]
     public int row;
     public int column;
+    public Transform centerPosition;
 
     [Header("Player")]
+    public GameObject playerPrefab;
     public float speed;
     public float accelerate;
 
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
     public int cheeseGoal;
     private int score;
     private int cheese;
+    private bool ovenOpened = false;
 
     [Header("UI")]
     public Text txtScore;
@@ -46,30 +49,39 @@ public class GameManager : MonoBehaviour
     public Text clearScoreTxt;
     public GameObject clearPanel;
 
-    [HideInInspector]
-    public float tileSize;
+    private float tileSize;
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
         else
+        {
+            instance.InitGame();
             Destroy(gameObject);
+        }
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
+        InitGame();
+    }
+
+    private void InitGame()
+    {
+        tileMaker = GetComponent<TileMaker>();
+        tileMaker.MakeBoard(row, column, centerPosition.position);
+
+        tileSize = tileMaker.TileSize;
         score = initialScore;
 
-        tileMaker = GetComponent<TileMaker>();
-        tileMaker.MakeBoard(row, column);
-
-        this.tileSize = tileMaker.TileSize;
-
         toppingSpawner = GetComponent<ToppingSpawner>();
-        toppingSpawner.InitSpawner(toppingdelay, destroydelay);
+        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize);
 
-        player.Init(tileSize, speed, accelerate);
+        player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
+        player.Init(tileSize, speed, accelerate, centerPosition.position);
     }
 
     public void ChangeScore(Topping t )
@@ -82,8 +94,12 @@ public class GameManager : MonoBehaviour
 
         if (score < 0)
             GameOver();
-        
-        if (cheese == cheeseGoal) toppingSpawner.MakeOven();
+
+        if (cheese == cheeseGoal && !ovenOpened)
+        {
+            toppingSpawner.MakeOven();
+            ovenOpened = true;
+        }
     }
 
     public void Stop() 

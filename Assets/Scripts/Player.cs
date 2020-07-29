@@ -8,7 +8,12 @@ public class Player : Tail
     float distance;
     float speed;
     float accel;
+    float xLen;
+    float yLen;
+    Vector3 center;
+
     Vector3 direction;
+    Vector3 preDirection;
 
     Transform Arrow;
 
@@ -20,13 +25,21 @@ public class Player : Tail
         Arrow = transform.GetChild(0);
     }
 
-    public void Init(float distance, float speed, float accel)
+    public void Init(float distance, float speed, float accel, Vector3 center)
     {
         this.distance = distance;
         direction = new Vector3(0, 1f, 0);
+        preDirection = direction;
 
         this.speed = speed;
         this.accel = accel;
+        this.center = center;
+
+        int row = GameManager.Instance().row;
+        int column = GameManager.Instance().column;
+
+        xLen = center.x + (row / 2) * distance + (distance / 2) * (row % 2 - 1);
+        yLen = (column / 2) * distance + (distance / 2) * (column % 2 - 1);
     }
 
     public void SetDirection(string dir) {
@@ -37,7 +50,10 @@ public class Player : Tail
             if (x != 0)
             {
                 Vector3 temp = new Vector3(1f, 0, 0) * x;
-                if (direction == temp * -1) return;
+                if (direction == temp * -1 || direction == preDirection * -1)
+                {
+                    return;
+                }
                 else direction = temp;
 
                 Arrow.localPosition = new Vector3(0.35f, 0, 0) * x;
@@ -46,7 +62,7 @@ public class Player : Tail
             else
             {
                 Vector3 temp = new Vector3(0, 1f, 0) * y;
-                if (direction == temp * -1) return;
+                if (direction == temp * -1 || direction == preDirection * -1) return;
                 else direction = temp;
 
                 Arrow.localPosition = new Vector3(0, 0.35f, 0) * y;
@@ -76,26 +92,21 @@ public class Player : Tail
 
     IEnumerator Move()
     {
-        int row = GameManager.Instance().row;
-        int column = GameManager.Instance().column;
-
-        float maxX = (row / 2) * distance + (distance / 2) * (row % 2 - 1);
-        float maxY = (column / 2) * distance + (distance / 2) * (column % 2 - 1);
-
         Vector3 tempPos;
 
         while (isMoving)
         {
+            preDirection = direction;
             tempPos = transform.position + direction * distance;
 
-            if (tempPos.x > maxX + 0.03)
-                Move(new Vector3(-maxX, tempPos.y, 0));
-            else if (tempPos.x < -maxX - 0.03)
-                Move(new Vector3(maxX, tempPos.y, 0));
-            else if (tempPos.y > maxY + 0.03)
-                Move(new Vector3(tempPos.x, -maxY, 0));
-            else if (tempPos.y < -maxY - 0.03)
-                Move(new Vector3(tempPos.x, maxY, 0));
+            if (tempPos.x > center.x + xLen + 0.03)
+                Move(new Vector3(center.x - xLen, tempPos.y, 0));
+            else if (tempPos.x < center.x - xLen - 0.03)
+                Move(new Vector3(center.x + xLen, tempPos.y, 0));
+            else if (tempPos.y > center.y + yLen + 0.03)
+                Move(new Vector3(tempPos.x, center.y - yLen, 0));
+            else if (tempPos.y < center.y - yLen - 0.03)
+                Move(new Vector3(tempPos.x, center.y + yLen, 0));
             else
                 Move(tempPos);
 

@@ -8,6 +8,7 @@ public class ToppingSpawner : MonoBehaviour
 
     int row, column;
     float tileSize;
+    Vector3 center;
     public GameObject topping;
     public GameObject oven;
     private GameObject toppingParent;
@@ -23,11 +24,12 @@ public class ToppingSpawner : MonoBehaviour
     private bool canMake = true;
 
 
-    public void InitSpawner(float spawnDelay, float destroyDelay)
+    public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize)
     {
         this.row = GameManager.Instance().row;
         this.column = GameManager.Instance().column;
-        this.tileSize = GameManager.Instance().tileSize;
+        this.tileSize = tileSize;
+        this.center = center;
 
         this.spawnDelay = spawnDelay;
         this.destroyDelay = destroyDelay;
@@ -88,8 +90,8 @@ public class ToppingSpawner : MonoBehaviour
     public Vector3 FindPosition()
     {
         // TODO :: 레이캐스트 사용하여 랜덤 위치에 다른 토핑/머리/꼬리 등등 존재하지 않는지 확인한 후에 생성해야 함
-        float x = Random.Range(0, row) * tileSize;
-        float y = Random.Range(0, column) * tileSize * -1;
+        float x = center.x + Random.Range(0, row) * tileSize;
+        float y = center.y + Random.Range(0, column) * tileSize * -1;
 
         y += (column / 2) * tileSize + (tileSize / 2) * (column % 2 - 1);
         x += -((row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1));

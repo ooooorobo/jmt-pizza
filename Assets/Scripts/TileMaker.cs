@@ -8,22 +8,25 @@ public class TileMaker : MonoBehaviour
     public float TileSize { get { return tileSize; } }
     float startX, startY;
 
+    Vector3 center;
+
     public GameObject tile;
     public Sprite[] tileColors;
 
 
-    public void MakeBoard(int column, int row)
+    public void MakeBoard(int column, int row, Vector3 center)
     {
         this.row = row;
         this.column = column;
+        this.center = center;
 
         tileSize = tile.GetComponent<BoxCollider2D>().size.x;
 
         // 좌로, 위로 얼마나 올라가서 starting point 잡을지 계산
         // row/column이 홀수일 경우, 2로 나눈 몫 만큼의 tilesize만 주면 됨
         // 그런데 짝수일 경우 2로 나눈 몫의 tilesize/2 만큼의 차이가 생기게 됨
-        startX = (-1 * (column / 2) * tileSize) - (tileSize / 2) * (column % 2 - 1);
-        startY = (row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1);
+        startX = center.x + (-1 * (column / 2) * tileSize) - (tileSize / 2) * (column % 2 - 1);
+        startY = center.y + (row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1);
 
         Transform tileParent = new GameObject("tileparent").transform;
 
