@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     TileMaker tileMaker;
     ToppingSpawner toppingSpawner;
+    public JoystickController joyController;
     public Player player;
 
     [Header("Board")]
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour
     private int score;
     private int cheese;
     private bool ovenOpened = false;
+
+    [Header("Arrow")]
+    public Button up;
+    public Button left;
+    public Button right;
+    public Button down;
 
     [Header("UI")]
     public Text txtScore;
@@ -82,6 +89,13 @@ public class GameManager : MonoBehaviour
 
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, speed, accelerate, centerPosition.position);
+
+        up.onClick.AddListener(() => player.SetDirection("12"));
+        down.onClick.AddListener(() => player.SetDirection("10"));
+        left.onClick.AddListener(() => player.SetDirection("01"));
+        right.onClick.AddListener(() => player.SetDirection("21"));
+
+        joyController.Init(player);
     }
 
     public void ChangeScore(Topping t )

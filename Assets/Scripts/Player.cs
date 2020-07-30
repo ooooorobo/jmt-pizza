@@ -45,7 +45,7 @@ public class Player : Tail
     public void SetDirection(string dir) {
         int x = dir[0] - '1';
         int y = dir[1] - '1';
-
+        Debug.Log(x+""+y);
         if (x != 0 || y != 0)
             if (x != 0)
             {
