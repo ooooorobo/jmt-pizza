@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         score += t.isO ? oToppingScore : xToppingScore;
         if (t.isCheese) cheese++;
 
-        txtScore.text = "Score: " + score;
+        txtScore.text = score + "￦";
         cheeseScore.text = "Cheese: " + cheese;
 
         if (score < 0)
