@@ -11,7 +11,7 @@ public class TileMaker : MonoBehaviour
     Vector3 center;
 
     public GameObject tile;
-    public Sprite[] tileColors;
+    public Color[] tileColors;
 
 
     public void MakeBoard(int column, int row, Vector3 center)
@@ -36,7 +36,7 @@ public class TileMaker : MonoBehaviour
             for (int y = 0; y < row; y++)
             {
                 GameObject newTile = Instantiate(tile, new Vector3(startX + x * tileSize, startY - y * tileSize, 0), Quaternion.identity);
-                newTile.GetComponent<SpriteRenderer>().sprite = tileColors[(x * column + y) % 2];
+                newTile.GetComponent<SpriteRenderer>().color = tileColors[(x * column + y) % 2];
                 newTile.transform.parent = tileParent;
             }
         }
