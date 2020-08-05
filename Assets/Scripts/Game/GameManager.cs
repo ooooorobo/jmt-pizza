@@ -21,6 +21,13 @@ public class GameManager : MonoBehaviour
     public JoystickController joyController;
     public Player player;
 
+    [Header("Stage Config")]
+    public bool isStory;
+    public int timeLimit;
+    public int goalScore;
+    public int goalToppingCount;
+    public int countXTopping;
+
     [Header("Board")]
     public int row;
     public int column;
@@ -64,7 +71,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
         {
-            instance.InitGame();
             Destroy(gameObject);
         }
 
