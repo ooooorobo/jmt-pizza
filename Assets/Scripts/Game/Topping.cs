@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Topping : MonoBehaviour
 {
+    public int id;
     public bool isO;
     public bool isCheese;
 

@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6c374e46b534cb79520c8680a74730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageCount: 20
+  stageCount: 10
   stageButton: {fileID: 6677827011928244891, guid: 5f8e8c105b2eb4e3abffef8096f47c69,
     type: 3}
   scrollView: {fileID: 1514537275}
@@ -560,6 +560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0d5bb4d272463cb8b0917377e0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  stageId: 
+  stageMode: 0
+  timeLimit: 0
+  minScore: 0
+  cntXTopping: 0
+  goalTopping: 0
 --- !u!4 &1114695472
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public enum GameMode
 {
@@ -63,7 +65,6 @@ public class StageLoader : MonoBehaviour
 
     public void SetStageData(int stageNumber)
 	{
-        Debug.Log(stageNumber);
         Dictionary<string, object> stageData = stageDataList[stageNumber];
 
         stageId = stageData["stage_id"].ToString();
@@ -90,6 +91,9 @@ public class StageLoader : MonoBehaviour
                 stageMode = StageMode.ORIGINAL;
                 break;
 		}
+
+        mode = GameMode.STORY;
+        MoveScene("Main");
 	}
 
     public void CleanStageData()
@@ -101,4 +105,9 @@ public class StageLoader : MonoBehaviour
         cntXTopping = 0;
         goalTopping = 0;
 	}
+
+    public void MoveScene(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
+    }
 }

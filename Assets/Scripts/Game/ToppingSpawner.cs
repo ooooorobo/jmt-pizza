@@ -121,7 +121,8 @@ public class ToppingSpawner : MonoBehaviour
                 int index = Random.Range(0, toppingSprites.Length);
                 temp.GetComponent<SpriteRenderer>().sprite = toppingSprites[index];
                 temp.GetComponent<Topping>().isO = isOTopping[index];
-                
+                temp.GetComponent<Topping>().id = index;
+
                 if (index == 0) temp.GetComponent<Topping>().isCheese = true;
                 else temp.GetComponent<Topping>().isCheese = false;
                 

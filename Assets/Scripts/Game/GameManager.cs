@@ -21,13 +21,6 @@ public class GameManager : MonoBehaviour
     public JoystickController joyController;
     public Player player;
 
-    [Header("Stage Config")]
-    public bool isStory;
-    public int timeLimit;
-    public int goalScore;
-    public int goalToppingCount;
-    public int countXTopping;
-
     [Header("Board")]
     public int row;
     public int column;
@@ -63,6 +56,23 @@ public class GameManager : MonoBehaviour
     public Text clearScoreTxt;
     public GameObject clearPanel;
 
+    [Header("For Mode")]
+    public Text StageID;
+    public Text TimeLimit;
+    public Text GoalTopping;
+    public Text GoalToppingCNT;
+    public Text GoalScore;
+    public Text StageMode;
+    public string stageId;
+    private int timeLimit;
+    private int goalTopping;
+    private int goalToppingId;
+    private int goalToppingCNT = 0;
+    private int minScore;
+    private int cntXTopping;
+
+
+
     private float tileSize;
 
     private void Awake()
@@ -79,6 +89,31 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
+		{
+            stageId = StageLoader.Instance().stageId;
+            timeLimit = StageLoader.Instance().timeLimit;
+            goalTopping = StageLoader.Instance().goalTopping;
+            minScore = StageLoader.Instance().minScore;
+            cntXTopping = StageLoader.Instance().cntXTopping;
+            goalToppingId = 0;
+
+            StageID.text = "stage id: " + stageId;
+            TimeLimit.text = "시간 제한: " + timeLimit.ToString();
+            GoalTopping.text = "토핑 " + goalTopping.ToString() + "개 목표";
+            GoalToppingCNT.text = "현재 "+ goalToppingCNT + "개";
+            GoalScore.text = "목표 " + minScore.ToString() + "원";
+            StageMode.text = StageLoader.Instance().mode.ToString();
+        } else
+		{
+            StageID.gameObject.SetActive(false);
+            TimeLimit.gameObject.SetActive(false);
+            GoalTopping.gameObject.SetActive(false);
+            GoalScore.gameObject.SetActive(false);
+            StageMode.gameObject.SetActive(false);
+            GoalToppingCNT.gameObject.SetActive(false);
+        }
+
         InitGame();
     }
 
@@ -108,6 +143,11 @@ public class GameManager : MonoBehaviour
     {
         score += t.isO ? oToppingScore : xToppingScore;
         if (t.isCheese) cheese++;
+        if (t.id == goalToppingId)
+		{
+            goalToppingCNT++;
+            GoalToppingCNT.text = "현재 " + goalToppingCNT + "개";
+        }
 
         txtScore.text = score + "￦";
         cheeseScore.text = "Cheese: " + cheese;
@@ -120,6 +160,8 @@ public class GameManager : MonoBehaviour
             toppingSpawner.MakeOven();
             ovenOpened = true;
         }
+
+        CheckGameClear();
     }
 
     public void Stop() 
@@ -133,6 +175,18 @@ public class GameManager : MonoBehaviour
         player.StratMove();
         toppingSpawner.StartSpawn();
     }
+
+    public void CheckGameClear()
+	{
+        if (minScore > 0 && score >= minScore)
+		{
+            GameClear();
+		}
+        else if (goalTopping > 0 && goalToppingCNT >= goalTopping)
+		{
+            GameClear();
+		}
+	}
 
     public void GameOver()
     {
