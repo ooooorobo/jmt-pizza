@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToppingSpawner : MonoBehaviour
+public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 {
     public int poolSize;
 
@@ -22,9 +22,10 @@ public class ToppingSpawner : MonoBehaviour
     private float spawnDelay;
     private float destroyDelay;
     private bool canMake = true;
+    private int maxXTopping;
 
 
-    public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize)
+    public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping)
     {
         this.row = GameManager.Instance().row;
         this.column = GameManager.Instance().column;
@@ -33,6 +34,7 @@ public class ToppingSpawner : MonoBehaviour
 
         this.spawnDelay = spawnDelay;
         this.destroyDelay = destroyDelay;
+        this.maxXTopping = maxXTopping;
 
         isOTopping = new bool[toppingSprites.Length];
         isOTopping[0] = true; // cheese is always true
@@ -56,7 +58,7 @@ public class ToppingSpawner : MonoBehaviour
         MakePool();
     }
 
-    private void MakePool()
+    public void MakePool()
     {
         int count = 0;
 

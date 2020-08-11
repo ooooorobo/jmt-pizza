@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     TileMaker tileMaker;
-    ToppingSpawner toppingSpawner;
+    IToppingSpawner toppingSpawner;
     public JoystickController joyController;
     public Player player;
 
@@ -63,13 +63,13 @@ public class GameManager : MonoBehaviour
     public Text GoalToppingCNT;
     public Text GoalScore;
     public Text StageMode;
-    public string stageId;
-    private int timeLimit;
-    private int goalTopping;
-    private int goalToppingId;
+    public string stageId = "";
+    private int timeLimit = 0;
+    private int goalTopping = 0;
+    private int goalToppingId = 0;
     private int goalToppingCNT = 0;
-    private int minScore;
-    private int cntXTopping;
+    private int minScore = 0;
+    private int cntXTopping = 0;
 
 
 
@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
         tileSize = tileMaker.TileSize;
         score = initialScore;
 
-        toppingSpawner = GetComponent<ToppingSpawner>();
-        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize);
+        toppingSpawner = GetComponent<IToppingSpawner>();
+        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize, cntXTopping);
 
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, speed, accelerate, centerPosition.position);
