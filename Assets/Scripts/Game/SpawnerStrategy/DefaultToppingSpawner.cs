@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,11 +38,25 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         this.maxXTopping = maxXTopping;
 
         isOTopping = new bool[toppingSprites.Length];
-        isOTopping[0] = true; // cheese is always true
+
+        for(int i = 0; i < isOTopping.Length; i++)
+		{
+            isOTopping[i] = true;
+		}
+
+        while (maxXTopping > 0)
+        {
+            int randIndex = Random.Range(1, isOTopping.Length);
+            if (isOTopping[randIndex])
+            {
+                isOTopping[randIndex] = false;
+                maxXTopping--;
+            }
+        }
 
         for (int i = 1; i < isOTopping.Length; i++)
         {
-            isOTopping[i] = (Random.Range(0, 2) == 1);
+            // isOTopping[i] = (Random.Range(0, 2) == 1);
 
             GameObject oxTopping = Instantiate(topping, Vector3.zero, Quaternion.identity);
 
@@ -51,6 +66,8 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
             oxTopping.transform.localPosition = new Vector3(0.4f, 0, 0) * oxTopping.transform.parent.childCount;
             oxTopping.GetComponent<SpriteRenderer>().sprite = toppingSprites[i];
         }
+
+        
 
         toppingPool = new List<Topping>();
         toppingParent = new GameObject("toppingParent");
