@@ -8713,6 +8713,26 @@ PrefabInstance:
       propertyPath: StageMode
       value: 
       objectReference: {fileID: 1141088917}
+    - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: oToppingScore
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: accelerate
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: destroydelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: toppingdelay
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcec913a39c2347728ccd9c15b134d7c, type: 3}
 --- !u!1001 &6082757320956842249
