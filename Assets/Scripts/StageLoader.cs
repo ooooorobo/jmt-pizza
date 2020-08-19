@@ -45,6 +45,7 @@ public class StageLoader : MonoBehaviour
     public int minScore;
     public int cntXTopping;
     public int goalTopping;
+    public int obstacleCount;
 
     void Awake()
 	{
@@ -72,6 +73,7 @@ public class StageLoader : MonoBehaviour
         minScore = System.Convert.ToInt32(stageData["min_score"].ToString());
         cntXTopping = System.Convert.ToInt32(stageData["cnt_x_topping"].ToString());
         goalTopping = System.Convert.ToInt32(stageData["goal_topping"].ToString());
+        obstacleCount = System.Convert.ToInt32(stageData["obstacle_count"].ToString());
 
         switch (stageData["mode_id"])
 		{
@@ -104,6 +106,12 @@ public class StageLoader : MonoBehaviour
         minScore = 0;
         cntXTopping = 0;
         goalTopping = 0;
+	}
+
+    public void StartInfiniteMode()
+	{
+        mode = GameMode.INFINITE;
+        MoveScene("Main");
 	}
 
     public void MoveScene(string SceneName)

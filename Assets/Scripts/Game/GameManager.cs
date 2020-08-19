@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     private int goalToppingCNT = 0;
     private int minScore = 0;
     private int cntXTopping = 0;
-
+    private int obstacleCount = 0;
 
 
     private float tileSize;
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         score = initialScore;
 
         toppingSpawner = GetComponent<IToppingSpawner>();
-        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize, cntXTopping);
+        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize, cntXTopping, obstacleCount);
 
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, speed, accelerate, centerPosition.position);
@@ -178,13 +178,15 @@ public class GameManager : MonoBehaviour
 
     public void CheckGameClear()
 	{
+        // original / avoid
         if (minScore > 0 && score >= minScore)
 		{
-            GameClear();
+            toppingSpawner.MakeOven();
 		}
+        // goal topping
         else if (goalTopping > 0 && goalToppingCNT >= goalTopping)
 		{
-            GameClear();
+            toppingSpawner.MakeOven();
 		}
 	}
 

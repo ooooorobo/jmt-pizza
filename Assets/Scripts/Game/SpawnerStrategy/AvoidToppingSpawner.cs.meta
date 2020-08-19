@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fc09f2143167347209151a43d2feb54e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - topping: {instanceID: 0}
+  - oven: {instanceID: 0}
+  - oParent: {instanceID: 0}
+  - xParent: {instanceID: 0}
+  - obstacle: {fileID: 5263475443359711490, guid: 287c80ceb1c944bff95dc40fd8c9554c,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
