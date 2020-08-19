@@ -24,10 +24,10 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     private float destroyDelay;
     private bool canMake = true;
     private int maxXTopping;
+    private int obstacleCount; 
 
-
-    public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping)
-    {
+    public void InitValue(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping, int obstacleCount)
+	{
         this.row = GameManager.Instance().row;
         this.column = GameManager.Instance().column;
         this.tileSize = tileSize;
@@ -36,13 +36,15 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         this.spawnDelay = spawnDelay;
         this.destroyDelay = destroyDelay;
         this.maxXTopping = maxXTopping;
+        this.obstacleCount = obstacleCount;
+    }
 
-        isOTopping = new bool[toppingSprites.Length];
-
-        for(int i = 0; i < isOTopping.Length; i++)
-		{
+    public void InitOToppingList()
+	{
+        for (int i = 0; i < isOTopping.Length; i++)
+        {
             isOTopping[i] = true;
-		}
+        }
 
         while (maxXTopping > 0)
         {
@@ -53,6 +55,15 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
                 maxXTopping--;
             }
         }
+
+    }
+
+    public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping, int obstacleCount)
+    {
+        InitValue(spawnDelay, destroyDelay, center, tileSize, maxXTopping, obstacleCount);
+
+        isOTopping = new bool[toppingSprites.Length];
+        InitOToppingList();
 
         for (int i = 1; i < isOTopping.Length; i++)
         {
@@ -67,13 +78,18 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
             oxTopping.GetComponent<SpriteRenderer>().sprite = toppingSprites[i];
         }
 
-        
-
         toppingPool = new List<Topping>();
         toppingParent = new GameObject("toppingParent");
 
+        SpawnObstacle(obstacleCount);
+
         MakePool();
     }
+
+    public virtual void SpawnObstacle(int obsCount)
+	{
+
+	}
 
     public void MakePool()
     {
