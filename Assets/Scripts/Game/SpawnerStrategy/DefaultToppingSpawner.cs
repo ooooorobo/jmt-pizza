@@ -10,13 +10,17 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     int row, column;
     float tileSize;
     Vector3 center;
+
     public GameObject topping;
     public GameObject oven;
+    public GameObject obstacle;
+    public Sprite[] toppingSprites;
+
     private GameObject toppingParent;
     public Transform oParent;
     public Transform xParent;
+
     public List<Topping> toppingPool;
-    public Sprite[] toppingSprites;
     public bool[] isOTopping;
 
     private int poolTail = 0;
@@ -24,7 +28,9 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     private float destroyDelay;
     private bool canMake = true;
     private int maxXTopping;
-    private int obstacleCount; 
+    public int obstacleCount;
+
+    private bool isOvenOpened = false;
 
     public void InitValue(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping, int obstacleCount)
 	{
@@ -81,15 +87,22 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         toppingPool = new List<Topping>();
         toppingParent = new GameObject("toppingParent");
 
+        this.obstacleCount = obstacleCount;
         SpawnObstacle(obstacleCount);
 
         MakePool();
     }
 
     public virtual void SpawnObstacle(int obsCount)
-	{
-
-	}
+    {
+        Debug.Log(obstacleCount);
+        for (int i = 0; i < obstacleCount; i++)
+        {
+            Debug.Log(obstacleCount);
+            Vector3 position = FindPosition();
+            GameObject newObstacle = Instantiate(obstacle, position, Quaternion.identity);
+        }
+    }
 
     public void MakePool()
     {
@@ -107,8 +120,12 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 
     public void MakeOven() 
     {
-        Vector3 position = FindPosition();
-        GameObject ovenInstance = Instantiate(oven, position, Quaternion.identity);
+        if (!isOvenOpened)
+        {
+            Vector3 position = FindPosition();
+            GameObject ovenInstance = Instantiate(oven, position, Quaternion.identity);
+            isOvenOpened = true;
+        }
     }
 
     public void Stop()

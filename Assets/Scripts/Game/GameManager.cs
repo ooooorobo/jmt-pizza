@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
             goalTopping = StageLoader.Instance().goalTopping;
             minScore = StageLoader.Instance().minScore;
             cntXTopping = StageLoader.Instance().cntXTopping;
+            obstacleCount = StageLoader.Instance().obstacleCount;
             goalToppingId = 0;
 
             StageID.text = "stage id: " + stageId;
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
         tileSize = tileMaker.TileSize;
         score = initialScore;
 
+        // SpawnerFactory.CreateSpawner(StageLoader.Instance().stageMode, gameObject);
         toppingSpawner = GetComponent<IToppingSpawner>();
         toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize, cntXTopping, obstacleCount);
 
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour
         if (score < 0)
             GameOver();
 
-        if (cheese == cheeseGoal && !ovenOpened)
+        if (cheese == cheeseGoal && !ovenOpened && StageLoader.Instance().mode == GameMode.INFINITE)
         {
             toppingSpawner.MakeOven();
             ovenOpened = true;
@@ -207,5 +209,10 @@ public class GameManager : MonoBehaviour
     public void Restart() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GoMain()
+    {
+        SceneManager.LoadScene("Story");
     }
 }

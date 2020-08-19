@@ -140,6 +140,9 @@ public class Player : Tail
             case "Oven":
                 GameManager.Instance().GameClear();
                 break;
+            case "Obstacle":
+                GameManager.Instance().GameOver();
+                break;
         }
     }
 }

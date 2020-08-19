@@ -4,8 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - topping: {instanceID: 0}
-  - oven: {instanceID: 0}
+  - topping: {fileID: 6071970254904055127, guid: 4f7d308ddb61946bd9128ef603ffeabe,
+      type: 3}
+  - oven: {fileID: 1979575075988671185, guid: 512e02fba5f95496bbbf64363e52de3c, type: 3}
   - oParent: {instanceID: 0}
   - xParent: {instanceID: 0}
   - obstacle: {fileID: 5263475443359711490, guid: 287c80ceb1c944bff95dc40fd8c9554c,

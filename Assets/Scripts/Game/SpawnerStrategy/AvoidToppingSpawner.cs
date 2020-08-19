@@ -8,6 +8,7 @@ public class AvoidToppingSpawner : DefaultToppingSpawner
 
     public override void SpawnObstacle(int obsCount)
 	{
+        Debug.Log("spawn");
         for (int i = 0; i < obsCount; i++)
 		{
             Vector3 position = FindPosition();
