@@ -10371,6 +10371,11 @@ PrefabInstance:
       propertyPath: cheeseGoal
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4296764815147653905, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: cntXTopping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7017314304689949489, guid: bcec913a39c2347728ccd9c15b134d7c,
         type: 3}
       propertyPath: tileColors.Array.data[0].r

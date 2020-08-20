@@ -15,7 +15,6 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
     public Image CurrentActive = null;
 
     public Color[] arrowColors;
-    bool onTouch = false;
 
     float radious;
 
@@ -31,7 +30,6 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
         up.color = arrowColors[0];
         down.color = arrowColors[0];
     }
-
     public void Init(Player player)
     {
         this.player = player;
@@ -99,7 +97,6 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
     public void OnPointerDown(PointerEventData e)
     {
         backCircle.gameObject.SetActive(true);
-        onTouch = true;
         backCircle.position = e.position;
         OnTouch(e.position);
     }
@@ -111,7 +108,6 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnPointerUp(PointerEventData e)
     {
-        onTouch = false;
         joyCircle.localPosition = Vector2.zero;
         backCircle.gameObject.SetActive(false);
     }

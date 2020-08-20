@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public int oToppingScore;
     public int xToppingScore;
     public int initialScore;
+    public int cntXTopping;
     public int cheeseGoal;
     private int score;
     private int cheese;
@@ -71,7 +72,6 @@ public class GameManager : MonoBehaviour
     private int goalToppingId = 0;
     private int goalToppingCNT = 0;
     private int minScore = 0;
-    private int cntXTopping = 0;
     private int obstacleCount = 0;
 
     private GameMode mode = GameMode.INFINITE;
@@ -95,6 +95,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        goalToppingId = 0;
+
         if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
 		{
             stageId = StageLoader.Instance().stageId;
@@ -104,8 +106,6 @@ public class GameManager : MonoBehaviour
             cntXTopping = StageLoader.Instance().cntXTopping;
             obstacleCount = StageLoader.Instance().obstacleCount;
             mode = StageLoader.Instance().mode;
-
-            if (mode == GameMode.INFINITE) cheeseGoal = 4;
 
             goalToppingId = 0;
 
@@ -154,6 +154,18 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(Topping t )
     {
         score += t.isO ? oToppingScore : xToppingScore;
+
+        if (t.isO)
+		{
+            score += oToppingScore;
+            player.GetComponent<Animator>().SetTrigger("Happy");
+		}
+        else
+		{
+            score += xToppingScore;
+            player.GetComponent<Animator>().SetTrigger("Sad");
+        }
+
         if (t.isCheese) {
             cheese++;
             if (addGaugeCoroutine != null)
