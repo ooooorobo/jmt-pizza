@@ -95,7 +95,6 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 
     public virtual void SpawnObstacle(int obsCount)
     {
-        Debug.Log(obstacleCount);
         for (int i = 0; i < obstacleCount; i++)
         {
             Debug.Log(obstacleCount);
