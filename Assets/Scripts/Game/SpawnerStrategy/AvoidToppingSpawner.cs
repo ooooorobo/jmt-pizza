@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AvoidToppingSpawner : DefaultToppingSpawner
 {
-    public GameObject obstacle;
-
     public override void SpawnObstacle(int obsCount)
 	{
         Debug.Log("spawn");

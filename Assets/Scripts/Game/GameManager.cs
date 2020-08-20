@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public Text cheeseScore;
     public Text clearScoreTxt;
     public GameObject clearPanel;
+    public GameObject overPanel;
 
     [Header("For Mode")]
     public Text StageID;
@@ -71,6 +72,8 @@ public class GameManager : MonoBehaviour
     private int minScore = 0;
     private int cntXTopping = 0;
     private int obstacleCount = 0;
+
+    private GameMode mode = GameMode.INFINITE;
 
 
     private float tileSize;
@@ -97,6 +100,8 @@ public class GameManager : MonoBehaviour
             minScore = StageLoader.Instance().minScore;
             cntXTopping = StageLoader.Instance().cntXTopping;
             obstacleCount = StageLoader.Instance().obstacleCount;
+            mode = StageLoader.Instance().mode;
+
             goalToppingId = 0;
 
             StageID.text = "stage id: " + stageId;
@@ -157,7 +162,7 @@ public class GameManager : MonoBehaviour
         if (score < 0)
             GameOver();
 
-        if (cheese == cheeseGoal && !ovenOpened && StageLoader.Instance().mode == GameMode.INFINITE)
+        if (cheese == cheeseGoal && !ovenOpened && mode == GameMode.INFINITE)
         {
             toppingSpawner.MakeOven();
             ovenOpened = true;
@@ -196,7 +201,7 @@ public class GameManager : MonoBehaviour
     {
         Stop();
 
-        Debug.Log("Game Over");
+        overPanel.SetActive(true);
     }
 
     public void GameClear()
