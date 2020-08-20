@@ -56,7 +56,7 @@ public class Player : Tail
                 }
                 else direction = temp;
 
-                Arrow.localPosition = new Vector3(0.35f, 0, 0) * x;
+                Arrow.localPosition = new Vector3(0.232f, 0, 0) * x;
                 Arrow.rotation = Quaternion.Euler(0, 0, 90 * x * -1);
             }
             else
@@ -65,7 +65,7 @@ public class Player : Tail
                 if (direction == temp * -1 || direction == preDirection * -1) return;
                 else direction = temp;
 
-                Arrow.localPosition = new Vector3(0, 0.35f, 0) * y;
+                Arrow.localPosition = new Vector3(0, 0.232f, 0) * y;
                 Arrow.rotation = Quaternion.Euler(0, 0, 90 * (y - 1));
             }
     }
