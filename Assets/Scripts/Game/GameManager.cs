@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public Text clearScoreTxt;
     public GameObject clearPanel;
     public GameObject overPanel;
+    public Image CheeseGauge;
 
     [Header("For Mode")]
     public Text StageID;
@@ -74,6 +75,8 @@ public class GameManager : MonoBehaviour
     private int obstacleCount = 0;
 
     private GameMode mode = GameMode.INFINITE;
+
+    IEnumerator addGaugeCoroutine;
 
 
     private float tileSize;
@@ -101,6 +104,8 @@ public class GameManager : MonoBehaviour
             cntXTopping = StageLoader.Instance().cntXTopping;
             obstacleCount = StageLoader.Instance().obstacleCount;
             mode = StageLoader.Instance().mode;
+
+            if (mode == GameMode.INFINITE) cheeseGoal = 4;
 
             goalToppingId = 0;
 
@@ -149,7 +154,13 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(Topping t )
     {
         score += t.isO ? oToppingScore : xToppingScore;
-        if (t.isCheese) cheese++;
+        if (!t.isCheese) {
+            cheese++;
+            if (addGaugeCoroutine != null)
+                StopCoroutine(addGaugeCoroutine);
+            addGaugeCoroutine = AddGauge((float)cheese / cheeseGoal);
+            StartCoroutine(addGaugeCoroutine);
+        }
         if (t.id == goalToppingId)
 		{
             goalToppingCNT++;
@@ -220,4 +231,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Story");
     }
+
+    IEnumerator AddGauge (float maximum)
+	{
+        while (CheeseGauge.fillAmount < maximum)
+		{
+            CheeseGauge.fillAmount += 0.001f;
+
+            yield return null;
+		}
+	}
 }
