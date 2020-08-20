@@ -31,17 +31,12 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
         up.color = arrowColors[0];
         down.color = arrowColors[0];
     }
+
     public void Init(Player player)
     {
         this.player = player;
     }
-    private void Update()
-    {
-        if (onTouch)
-        {
-            //player.SetDirection()
-        }
-    }
+
 
     private void OnTouch (Vector2 touchpos)
     {

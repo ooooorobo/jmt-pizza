@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(Topping t )
     {
         score += t.isO ? oToppingScore : xToppingScore;
-        if (!t.isCheese) {
+        if (t.isCheese) {
             cheese++;
             if (addGaugeCoroutine != null)
                 StopCoroutine(addGaugeCoroutine);
@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
 	{
         while (CheeseGauge.fillAmount < maximum)
 		{
-            CheeseGauge.fillAmount += 0.001f;
+            CheeseGauge.fillAmount += 0.0035f;
 
             yield return null;
 		}
