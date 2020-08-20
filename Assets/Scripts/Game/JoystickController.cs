@@ -8,7 +8,13 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
 {
     public RectTransform backCircle;
     public RectTransform joyCircle;
+    public Image left;
+    public Image up;
+    public Image right;
+    public Image down;
+    public Image CurrentActive = null;
 
+    public Color[] arrowColors;
     bool onTouch = false;
 
     float radious;
@@ -19,6 +25,11 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
     {
         radious = backCircle.rect.width / 2;
         backCircle.gameObject.SetActive(false);
+
+        left.color = arrowColors[0];
+        right.color = arrowColors[0];
+        up.color = arrowColors[0];
+        down.color = arrowColors[0];
     }
     public void Init(Player player)
     {
@@ -47,16 +58,46 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IDragHandl
 
             if (x >= y)
             {
-                if (pos.x < 0) dir = "01";
-                else dir = "21";
+                // left
+                if (pos.x < 0)
+                {
+                    SetActiveArrow(left);
+                    dir = "01";
+                }
+                // right
+                else
+                {
+                    SetActiveArrow(right);
+                    dir = "21";
+                }
             }
             else
             {
-                if (pos.y < 0) dir = "10";
-                else dir = "12";
+                // down
+                if (pos.y < 0)
+                {
+                    SetActiveArrow(down);
+                    dir = "10";
+                }
+                // up
+                else
+                {
+                    SetActiveArrow(up);
+                    dir = "12";
+                }
             }
 
             player.SetDirection(dir);
+        }
+    }
+
+    public void SetActiveArrow(Image arrow)
+	{
+        if (CurrentActive != arrow)
+        {
+            arrow.color = arrowColors[1];
+            if (CurrentActive != null) CurrentActive.color = arrowColors[0];
+            CurrentActive = arrow;
         }
     }
 
