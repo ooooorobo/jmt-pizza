@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114695471}
+      - m_Target: {fileID: 657293962}
         m_MethodName: StartInfiniteMode
         m_Mode: 1
         m_Arguments:

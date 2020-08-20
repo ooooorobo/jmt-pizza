@@ -20,4 +20,11 @@ public class StageManager : MonoBehaviour
             newBtn.GetComponent<Button>().onClick.AddListener(() => StageLoader.Instance().SetStageData(x));
 		}
 	}
+
+
+    public void StartInfiniteMode()
+    {
+        StageLoader.Instance().mode = GameMode.INFINITE;
+        StageLoader.Instance().MoveScene("Main");
+    }
 }
