@@ -124,6 +124,7 @@ public class Player : Tail
 
                 Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
                 newtail.GetComponent<SpriteRenderer>().sprite = col.GetComponent<SpriteRenderer>().sprite;
+                newtail.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
 
                 if (next == null) next = newtail;
                 else last.next = newtail;
