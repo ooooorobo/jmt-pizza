@@ -13,4 +13,13 @@ public class Tail : MonoBehaviour
         if (next != null) next.Move(prevPos);
         transform.position = nextPos;
     }
+
+    public void OnEnterOven()
+	{
+        Color col = GetComponent<SpriteRenderer>().color;
+        col.a = 0;
+        GetComponent<SpriteRenderer>().color = col;
+
+        GetComponent<BoxCollider2D>().enabled = false;
+    }
 }

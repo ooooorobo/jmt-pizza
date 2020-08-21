@@ -108,11 +108,6 @@ public class StageLoader : MonoBehaviour
         goalTopping = 0;
 	}
 
-    public void StartInfiniteMode()
-	{
-        mode = GameMode.INFINITE;
-        MoveScene("Main");
-	}
 
     public void MoveScene(string SceneName)
     {

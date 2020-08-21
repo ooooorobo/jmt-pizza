@@ -19,6 +19,7 @@ public class Player : Tail
 
     public GameObject Tail;
     public Tail last;
+    private int tailCount;
 
     private void Start()
     {
@@ -90,6 +91,28 @@ public class Player : Tail
         StartCoroutine("Move", speed);
     }
 
+    public IEnumerator EnterOven()
+	{
+        int count = 0;
+        Tail nowOven = this;
+
+        while (count++ < tailCount)
+		{
+            nowOven.OnEnterOven();
+
+            if (nowOven.next != null)
+			{
+                nowOven = nowOven.next;
+			}
+
+            yield return new WaitForSeconds(speed);
+        }
+
+        yield return new WaitForSeconds(speed * 3);
+
+        GameManager.Instance().GameClear();
+    }
+
     IEnumerator Move()
     {
         Vector3 tempPos;
@@ -130,16 +153,20 @@ public class Player : Tail
                 else last.next = newtail;
                 last = newtail;
 
+                tailCount++;
+
                 speed -= accel;
 
                 break;
 
             case "Tail":
                 GameManager.Instance().GameOver();
+
                 break;
 
             case "Oven":
-                GameManager.Instance().GameClear();
+                StartCoroutine("EnterOven");
+
                 break;
             case "Obstacle":
                 GameManager.Instance().GameOver();
