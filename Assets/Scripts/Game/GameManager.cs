@@ -198,10 +198,14 @@ public class GameManager : MonoBehaviour
     {
         player.Stop();
         toppingSpawner.Stop();
+
+        Time.timeScale = 0;
     }
 
     public void StartGame() 
     {
+        Time.timeScale = 1;
+
         player.StratMove();
         toppingSpawner.StartSpawn();
     }

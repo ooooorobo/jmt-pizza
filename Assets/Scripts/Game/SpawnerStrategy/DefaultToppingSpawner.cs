@@ -31,6 +31,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     public int obstacleCount;
 
     private bool isOvenOpened = false;
+    IEnumerator spawn;
 
     public void InitValue(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping, int obstacleCount)
 	{
@@ -43,6 +44,8 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         this.destroyDelay = destroyDelay;
         this.maxXTopping = maxXTopping;
         this.obstacleCount = obstacleCount;
+
+        spawn = MakeTopping();
     }
 
     public void InitOToppingList()
@@ -130,12 +133,13 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     public void Stop()
     {
         canMake = false;
+        StopCoroutine(spawn);
     }
 
     public void StartSpawn() 
     {
         canMake = true;
-        StartCoroutine("MakeTopping", 2f);
+        StartCoroutine(spawn);
     }
 
     public Vector3 FindPosition()
@@ -162,6 +166,8 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 
     IEnumerator MakeTopping()
     {
+        yield return new WaitForSeconds(spawnDelay);
+
         while (canMake)
         {
             GameObject temp = toppingPool[poolTail % toppingPool.Count].gameObject;

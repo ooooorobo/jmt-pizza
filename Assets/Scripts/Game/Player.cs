@@ -20,10 +20,12 @@ public class Player : Tail
     public GameObject Tail;
     public Tail last;
     private int tailCount;
+    IEnumerator move;
 
     private void Start()
     {
         Arrow = transform.GetChild(0);
+        move = MoveCoroutine();
     }
 
     public void Init(float distance, float speed, float accel, Vector3 center)
@@ -83,12 +85,13 @@ public class Player : Tail
     public void Stop()
     {
         isMoving = false;
+        StopCoroutine(move);
     }
 
     public void StratMove()
     {
         isMoving = true;
-        StartCoroutine("Move", speed);
+        StartCoroutine(move);
     }
 
     public IEnumerator EnterOven()
@@ -96,7 +99,7 @@ public class Player : Tail
         int count = 0;
         Tail nowOven = this;
 
-        while (count++ < tailCount)
+        while (count++ < tailCount + 1)
 		{
             nowOven.OnEnterOven();
 
@@ -113,27 +116,29 @@ public class Player : Tail
         GameManager.Instance().GameClear();
     }
 
-    IEnumerator Move()
+    IEnumerator MoveCoroutine()
     {
         Vector3 tempPos;
 
         while (isMoving)
         {
-            preDirection = direction;
-            tempPos = transform.position + direction * distance;
-
-            if (tempPos.x > center.x + xLen + 0.03)
-                Move(new Vector3(center.x - xLen, tempPos.y, 0));
-            else if (tempPos.x < center.x - xLen - 0.03)
-                Move(new Vector3(center.x + xLen, tempPos.y, 0));
-            else if (tempPos.y > center.y + yLen + 0.03)
-                Move(new Vector3(tempPos.x, center.y - yLen, 0));
-            else if (tempPos.y < center.y - yLen - 0.03)
-                Move(new Vector3(tempPos.x, center.y + yLen, 0));
-            else
-                Move(tempPos);
-
             yield return new WaitForSeconds(speed);
+            if (isMoving)
+            {
+                preDirection = direction;
+                tempPos = transform.position + direction * distance;
+
+                if (tempPos.x > center.x + xLen + 0.03)
+                    Move(new Vector3(center.x - xLen, tempPos.y, 0));
+                else if (tempPos.x < center.x - xLen - 0.03)
+                    Move(new Vector3(center.x + xLen, tempPos.y, 0));
+                else if (tempPos.y > center.y + yLen + 0.03)
+                    Move(new Vector3(tempPos.x, center.y - yLen, 0));
+                else if (tempPos.y < center.y - yLen - 0.03)
+                    Move(new Vector3(tempPos.x, center.y + yLen, 0));
+                else
+                    Move(tempPos);
+            }
         }
     }
 
