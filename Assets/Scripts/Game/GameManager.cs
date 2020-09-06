@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     [Header("Board")]
-    public int row;
     public int column;
+    public int row;
     public Transform centerPosition;
 
     [Header("Player")]
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         tileMaker = GetComponent<TileMaker>();
-        tileMaker.MakeBoard(row, column, centerPosition.position);
+        tileMaker.MakeBoard(column, row, centerPosition.position);
 
         tileSize = tileMaker.TileSize;
         score = initialScore;
