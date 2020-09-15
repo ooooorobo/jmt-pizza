@@ -8,7 +8,7 @@ namespace Assets.Scripts.Data
     { 
         public static void SaveIntoJson(IData data, string fileName){
             string stringData = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.persistentDataPath + fileName + ".json", stringData);
+            File.WriteAllText(Application.persistentDataPath + "/" + fileName + ".json", stringData);
         }
 
         public static object GetDataFromJson<T>(string fileName) where T : new()
@@ -16,7 +16,7 @@ namespace Assets.Scripts.Data
             string json;
             try
             {
-                json = File.ReadAllText(Application.persistentDataPath + fileName + ".json");
+                json = File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json");
             }
             catch (Exception)
             {

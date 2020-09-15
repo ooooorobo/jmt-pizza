@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     public Text GoalToppingCNT;
     public Text GoalScore;
     public Text StageMode;
-    public string stageId = "";
+    public int stageNum = 0;
     private int timeLimit = 0;
     private int goalTopping = 0;
     private int goalToppingId = 0;
@@ -100,14 +100,15 @@ public class GameManager : MonoBehaviour
     {
         goalToppingId = 0;
         
-        userData = new UserData();
-        userData.SetInitialData();
+        // 이 부분 정리 필요
+        userData = (UserData) Assets.Scripts.Data.DataManager.GetDataFromJson<UserData>("userData");
+        if (userData == null) userData = new UserData();
 
         maxScore.text = "최고 점수: " + userData.maxScore + "₩";
             
         if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
 		{
-            stageId = StageLoader.Instance().stageId;
+            stageNum = Convert.ToInt32(StageLoader.Instance().stageId);
             timeLimit = StageLoader.Instance().timeLimit;
             goalTopping = StageLoader.Instance().goalTopping;
             minScore = StageLoader.Instance().minScore;
@@ -117,7 +118,7 @@ public class GameManager : MonoBehaviour
 
             goalToppingId = 0;
 
-            StageID.text = "stage id: " + stageId;
+            StageID.text = "stage id: " + stageNum;
             TimeLimit.text = "시간 제한: " + timeLimit.ToString();
             GoalTopping.text = "토핑 " + goalTopping.ToString() + "개 목표";
             GoalToppingCNT.text = "현재 "+ goalToppingCNT + "개";
@@ -140,7 +141,7 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         tileMaker = GetComponent<TileMaker>();
-        tileMaker.MakeBoard(column, row, centerPosition.position);
+        tileMaker.MakeBoard(row, column, centerPosition.position);
 
         tileSize = tileMaker.TileSize;
         score = initialScore;
@@ -244,8 +245,15 @@ public class GameManager : MonoBehaviour
         Stop();
         clearScoreTxt.text = score + clearScoreTxt.text;
         clearPanel.SetActive(true);
-        
-        userData.SaveClearData(score);
+
+        if (mode == GameMode.INFINITE)
+        {
+            userData.SaveClearData(score);
+        }
+        else
+        {
+            StoryData.SaveStageData(stageNum, score);
+        }
     }
 
     public void Restart() 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -47,6 +48,7 @@ public class StageLoader : MonoBehaviour
     public int goalTopping;
     public int obstacleCount;
 
+
     void Awake()
 	{
         if (instance == null)
@@ -62,6 +64,7 @@ public class StageLoader : MonoBehaviour
     void Start()
     {
         stageDataList = CSVReader.Read("Datas/stage1");
+        
     }
 
     public void SetStageData(int stageNumber)

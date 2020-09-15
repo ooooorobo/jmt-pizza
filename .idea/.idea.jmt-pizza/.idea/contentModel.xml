@@ -11,6 +11,7 @@
           <e p="Data" t="Include">
             <e p="DataManager.cs" t="Include" />
             <e p="IData.cs" t="Include" />
+            <e p="StageData.cs" t="Include" />
             <e p="UserData.cs" t="Include" />
           </e>
           <e p="DataManager.cs" t="Include" />

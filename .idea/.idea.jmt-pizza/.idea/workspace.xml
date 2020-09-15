@@ -20,19 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/IData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/IData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animation/FireIdle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animation/FireIdle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animation/sprites_21.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Animation/sprites_21.controller.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_32_0.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Coin_32_0.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/StageData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/StageData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +49,12 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/IData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/StageData.cs" />
       </list>
     </option>
   </component>
@@ -81,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599919209154</updated>
-      <workItem from="1599919214986" duration="3210000" />
+      <workItem from="1599919214986" duration="6588000" />
     </task>
     <servers />
   </component>
@@ -108,9 +114,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1599920396328" />
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1599921976373">
+    <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599921976373" />
+    <state x="362" y="61" width="537" height="822" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1600181917072" />
+    <state x="0" y="39" width="694" height="822" key="find.popup" timestamp="1600181528404">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600181528404" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1600182612375">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1600182612375" />
   </component>
 </project>
