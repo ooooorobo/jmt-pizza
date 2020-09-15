@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -53,8 +54,8 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public Text txtScore;
-    public Text cheeseScore;
     public Text clearScoreTxt;
+    public Text maxScore;
     public GameObject clearPanel;
     public GameObject overPanel;
     public Image CheeseGauge;
@@ -73,6 +74,8 @@ public class GameManager : MonoBehaviour
     private int goalToppingCNT = 0;
     private int minScore = 0;
     private int obstacleCount = 0;
+
+    [Header("Data")] private UserData userData;
 
     private GameMode mode = GameMode.INFINITE;
 
@@ -96,7 +99,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         goalToppingId = 0;
+        
+        userData = new UserData();
+        userData.SetInitialData();
 
+        maxScore.text = "최고 점수: " + userData.maxScore + "₩";
+            
         if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
 		{
             stageId = StageLoader.Instance().stageId;
@@ -126,6 +134,7 @@ public class GameManager : MonoBehaviour
         }
 
         InitGame();
+        
     }
 
     private void InitGame()
@@ -180,7 +189,6 @@ public class GameManager : MonoBehaviour
         }
 
         txtScore.text = score + "￦";
-        cheeseScore.text = "Cheese: " + cheese;
 
         if (score < 0)
             GameOver();
@@ -236,6 +244,8 @@ public class GameManager : MonoBehaviour
         Stop();
         clearScoreTxt.text = score + clearScoreTxt.text;
         clearPanel.SetActive(true);
+        
+        userData.SaveClearData(score);
     }
 
     public void Restart() 
