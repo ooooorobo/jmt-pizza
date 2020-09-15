@@ -112,11 +112,9 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 
         while (count++ < poolSize)
         {
-            GameObject newTopping = Instantiate(topping, Vector3.zero, Quaternion.identity);
+            GameObject newTopping = Instantiate(topping, new Vector3(-100, -100, 0), Quaternion.identity);
             newTopping.transform.parent = toppingParent.transform;
             toppingPool.Add(newTopping.GetComponent<Topping>());
-
-            newTopping.SetActive(false);
         }
     }
 
@@ -185,7 +183,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
                 
                 temp.SetActive(true);
                 poolTail++;
-
+                
                 StartCoroutine(temp.GetComponent<Topping>().Delay(destroyDelay));
             }
             else

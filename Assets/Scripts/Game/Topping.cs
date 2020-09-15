@@ -10,13 +10,19 @@ public class Topping : MonoBehaviour
     private SpriteRenderer sprite;
     private float blinkDelay = 0.3f;
 
-private void Start ()
+    private Animator effectAnimator;
+
+    private void Start ()
 	{
         sprite = GetComponent<SpriteRenderer>();
-	}
+        effectAnimator = transform.GetChild(0).GetComponent<Animator>();
+        gameObject.SetActive(false);
+    }
 
     public IEnumerator Delay(float destroyDelay)
     {
+        effectAnimator.SetTrigger("Created");
+        
         yield return new WaitForSeconds(destroyDelay - blinkTime);
 
         if (gameObject.activeInHierarchy)
