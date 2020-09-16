@@ -19,20 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/CheezeEffect_64x2_0.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/CheezeEffect_64x2_0.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/Effect1.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/Effect1.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/Effect3_32_0.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/Effect3_32_0.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/cheeseEffect.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Effect/cheeseEffect.anim.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Topping.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Topping.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1599919209154</updated>
-      <workItem from="1599919214986" duration="7790000" />
+      <workItem from="1599919214986" duration="7920000" />
     </task>
     <servers />
   </component>
