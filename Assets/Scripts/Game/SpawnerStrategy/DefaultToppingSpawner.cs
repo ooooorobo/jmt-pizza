@@ -14,6 +14,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
     public GameObject topping;
     public GameObject oven;
     public GameObject obstacle;
+    public GameObject coin;
     public Sprite[] toppingSprites;
 
     private GameObject toppingParent;
@@ -67,6 +68,11 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
 
     }
 
+    public void MakePool()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void InitSpawner(float spawnDelay, float destroyDelay, Vector3 center, float tileSize, int maxXTopping, int obstacleCount)
     {
         InitValue(spawnDelay, destroyDelay, center, tileSize, maxXTopping, obstacleCount);
@@ -93,7 +99,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         this.obstacleCount = obstacleCount;
         SpawnObstacle(obstacleCount);
 
-        MakePool();
+        MakeToppingPool();
     }
 
     public virtual void SpawnObstacle(int obsCount)
@@ -106,7 +112,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
         }
     }
 
-    public void MakePool()
+    public void MakeToppingPool()
     {
         int count = 0;
 
@@ -188,7 +194,7 @@ public class DefaultToppingSpawner : MonoBehaviour, IToppingSpawner
             }
             else
             {
-                MakePool();
+                MakeToppingPool();
             }
 
             yield return new WaitForSeconds(spawnDelay);

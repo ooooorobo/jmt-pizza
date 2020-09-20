@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     }
 
     TileMaker tileMaker;
-    IToppingSpawner toppingSpawner;
+    private SpawnerFactory spawnerFactory;
     public JoystickController joyController;
     public Player player;
 
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public float accelerate;
 
     [Header("Spawn Topping")]
-    public float toppingdelay;
+    public float spawnDelay;
     public float destroydelay;
 
     [Header("Score")]
@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        spawnerFactory = GetComponent<SpawnerFactory>();
         //DontDestroyOnLoad(gameObject);
     }
 
@@ -146,10 +147,9 @@ public class GameManager : MonoBehaviour
         tileSize = tileMaker.TileSize;
         score = initialScore;
 
-        // SpawnerFactory.CreateSpawner(StageLoader.Instance().stageMode, gameObject);
-        toppingSpawner = GetComponent<IToppingSpawner>();
-        toppingSpawner.InitSpawner(toppingdelay, destroydelay, centerPosition.position, tileSize, cntXTopping, obstacleCount);
-
+        spawnerFactory.InitFactory(spawnDelay, centerPosition, tileSize);
+        spawnerFactory.CreateSpawner(gameObject);
+        
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, speed, accelerate, centerPosition.position);
 
@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
 
         if (cheese == cheeseGoal && !ovenOpened && mode == GameMode.INFINITE)
         {
-            toppingSpawner.MakeOven();
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
             ovenOpened = true;
         }
 
@@ -206,8 +206,8 @@ public class GameManager : MonoBehaviour
     public void Stop() 
     {
         player.Stop();
-        toppingSpawner.Stop();
-
+        spawnerFactory.StopPeriodicSpawn();
+        
         Time.timeScale = 0;
     }
 
@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         player.StratMove();
-        toppingSpawner.StartSpawn();
+        spawnerFactory.StartPeriodicSpawn();
     }
 
     public void CheckGameClear()
@@ -224,12 +224,12 @@ public class GameManager : MonoBehaviour
         // original / avoid
         if (minScore > 0 && score >= minScore)
 		{
-            toppingSpawner.MakeOven();
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
 		}
         // goal topping
         else if (goalTopping > 0 && goalToppingCNT >= goalTopping)
 		{
-            toppingSpawner.MakeOven();
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
 		}
 	}
 

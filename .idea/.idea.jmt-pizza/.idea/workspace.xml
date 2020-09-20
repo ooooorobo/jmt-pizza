@@ -19,7 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="" />
+    <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/DefaultSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/DefaultSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/ToppingSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/ToppingSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/effects/Coin.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/effects/Coin.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/effects/Coin_32_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/effects/Coin_32_0.controller" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +54,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/StageData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/ToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/DefaultSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" />
       </list>
     </option>
   </component>
@@ -63,7 +86,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -101,19 +124,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="221" y="104" key="SettingsEditor" timestamp="1600580150246">
+    <state x="221" y="89" key="SettingsEditor" timestamp="1600586380645">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600586380645" />
+    <state x="221" y="104" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1600580150246" />
+    <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog" timestamp="1600590213476">
       <screen x="0" y="23" width="1440" height="822" />
     </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600579248976" />
-    <state x="221" y="104" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1600580150246" />
+    <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog/0.23.1440.822@0.23.1440.822" timestamp="1600590213476" />
     <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="362" y="61" width="537" height="822" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1600181917072" />
-    <state x="0" y="39" width="694" height="822" key="find.popup" timestamp="1600579851749">
+    <state x="0" y="39" width="694" height="822" key="find.popup" timestamp="1600591483088">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600579851749" />
+    <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
     <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1600579568524">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

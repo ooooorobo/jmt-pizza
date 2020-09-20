@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 274898879291216330}
   - component: {fileID: 4296764815147653905}
+  - component: {fileID: 1551886844181674689}
   - component: {fileID: 7017314304689949489}
-  - component: {fileID: 96134412}
   - component: {fileID: 417002994}
   m_Layer: 0
   m_Name: GameManager
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joyController: {fileID: 0}
   player: {fileID: 0}
-  row: 13
   column: 19
+  row: 13
   centerPosition: {fileID: 0}
   playerPrefab: {fileID: 8356817185706412598, guid: 308df295b1ba04281a4778e4be2155f4,
     type: 3}
@@ -60,22 +60,37 @@ MonoBehaviour:
   oToppingScore: 4000
   xToppingScore: -100
   initialScore: 1000
+  cntXTopping: 0
   cheeseGoal: 1
   up: {fileID: 0}
   left: {fileID: 0}
   right: {fileID: 0}
   down: {fileID: 0}
   txtScore: {fileID: 0}
-  cheeseScore: {fileID: 0}
   clearScoreTxt: {fileID: 0}
+  maxScore: {fileID: 0}
   clearPanel: {fileID: 0}
+  overPanel: {fileID: 0}
+  CheeseGauge: {fileID: 0}
   StageID: {fileID: 0}
   TimeLimit: {fileID: 0}
   GoalTopping: {fileID: 0}
   GoalToppingCNT: {fileID: 0}
   GoalScore: {fileID: 0}
   StageMode: {fileID: 0}
-  stageId: 
+  stageNum: 0
+--- !u!114 &1551886844181674689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933378469298824725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb684f011b9f47aaaa140b963d8bbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7017314304689949489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,38 +107,6 @@ MonoBehaviour:
   tileColors:
   - {r: 2.3694278e-38, g: 5.679202e+34, b: 1.8064493e+28, a: 7.5030994e+28}
   - {r: 7.2064716e+31, g: 7.5239747e+31, b: 3.030201e+35, a: 8.4808935e+26}
---- !u!114 &96134412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933378469298824725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b989e11a54d594c13b5da1d59c85e206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 20
-  topping: {fileID: 6071970254904055127, guid: 4f7d308ddb61946bd9128ef603ffeabe, type: 3}
-  oven: {fileID: 1979575075988671185, guid: 512e02fba5f95496bbbf64363e52de3c, type: 3}
-  obstacle: {fileID: 5263475443359711490, guid: 287c80ceb1c944bff95dc40fd8c9554c,
-    type: 3}
-  toppingSprites:
-  - {fileID: 6128299156075563123, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 3386662938922423588, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: -6110656803992641779, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 8553092956536608252, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 6708733205153277002, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 6813553822765877458, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: -5082647686934749709, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: -2423230811885516303, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 1211998406744890917, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  - {fileID: 6155212226941906339, guid: b0244fc4e2f1b4e67a731f16555ae4ca, type: 3}
-  oParent: {fileID: 0}
-  xParent: {fileID: 0}
-  toppingPool: []
-  isOTopping: 
 --- !u!114 &417002994
 MonoBehaviour:
   m_ObjectHideFlags: 0

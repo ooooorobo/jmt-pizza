@@ -24,6 +24,11 @@
               <e p="AvoidToppingSpawner.cs" t="Include" />
               <e p="DefaultToppingSpawner.cs" t="Include" />
               <e p="IToppingSpawner.cs" t="Include" />
+              <e p="SpawnerV2" t="Include">
+                <e p="DefaultSpawner.cs" t="Include" />
+                <e p="ToppingSpawner.cs" t="Include" />
+                <e p="WithRequestSpawner.cs" t="Include" />
+              </e>
             </e>
             <e p="Tail.cs" t="Include" />
             <e p="TileMaker.cs" t="Include" />

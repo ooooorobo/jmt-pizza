@@ -2,21 +2,86 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerFactory
+public enum RequestEnum
 {
-    public static void CreateSpawner(StageMode mode, GameObject obj)
+	OVEN, OBSTACLE
+}
+public class SpawnerFactory : MonoBehaviour
+{
+	public GameObject topping;
+	public GameObject coin;
+
+	public GameObject oven;
+	public GameObject obstacle;
+
+	private float spawnDelay;
+	private Vector3 center;
+	private float tileSize;
+
+	// 주기적으로 오브젝트를 생성하는 스포너 (Topping, Coin 등)
+	public List<DefaultSpawner> periodicSpawners = new List<DefaultSpawner>();
+	
+	// Oven, Obstacle 등 한 번 생성 후 사라지거나 하지 않고
+	// 요청에 의해 생성되는 오브젝트 생성 위한 스포너 
+	public WithRequestSpawner requestSpawner;
+	
+	public void InitFactory(float spawnDelay, Transform centerPosition, float tileSize)
 	{
-        switch(mode)
+		this.spawnDelay = spawnDelay;
+		this.center = centerPosition.position;
+		this.tileSize = tileSize;
+	}
+	
+	public DefaultSpawner CreateSpawner(GameObject obj)
+	{
+		requestSpawner = obj.AddComponent<WithRequestSpawner>();
+		
+		
+		DefaultSpawner spawner = obj.AddComponent<DefaultSpawner>();
+		spawner.spawnObject = coin;
+		periodicSpawners.Add(spawner);
+
+		InitPeriodicSpawners();
+		
+		return spawner;
+	}
+
+	private void InitPeriodicSpawners()
+	{
+		foreach (DefaultSpawner spawner in  periodicSpawners)
 		{
-			case StageMode.ORIGINAL:
-				obj.AddComponent<DefaultToppingSpawner>();
+			spawner.InitSpawner(spawnDelay, center, tileSize);
+		}
+	}
+
+	public void StartPeriodicSpawn()
+	{
+		foreach (DefaultSpawner spawner in  periodicSpawners)
+		{
+			spawner.StartSpawn();
+		}
+	}
+	
+	public void StopPeriodicSpawn()
+	{
+		foreach (DefaultSpawner spawner in  periodicSpawners)
+		{
+			spawner.Stop();
+		}
+	}
+
+	public void RequestSpawn(RequestEnum request)
+	{
+		switch (request)
+		{
+			case RequestEnum.OVEN:
+				requestSpawner.StartSpawn(oven);
 				break;
-			case StageMode.AVOID:
-				obj.AddComponent<AvoidToppingSpawner>();
-				break;
-			default:
-				obj.AddComponent<DefaultToppingSpawner>();
+			case RequestEnum.OBSTACLE:
+				requestSpawner.StartSpawn(obstacle);
 				break;
 		}
 	}
+
+
 }
