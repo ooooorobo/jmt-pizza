@@ -31,6 +31,7 @@
           </e>
           <e p="StageLoader.cs" t="Include" />
           <e p="Story" t="Include">
+            <e p="DialogManager.cs" t="Include" />
             <e p="StageManager.cs" t="Include" />
           </e>
         </e>
