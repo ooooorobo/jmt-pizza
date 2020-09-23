@@ -37,9 +37,11 @@ public class ToppingSpawner : DefaultSpawner
     {
         int index = Random.Range(0, toppingSprites.Length);
         obj.GetComponent<SpriteRenderer>().sprite = toppingSprites[index];
-        obj.GetComponent<Topping>().isO = isOTopping[index];
-        obj.GetComponent<Topping>().id = index;
-        obj.GetComponent<Topping>().isCheese = index == 0;
+        Topping top = obj.GetComponent<Topping>();
+        top.isO = isOTopping[index];
+        top.id = index;
+        top.isCheese = index == 0;
         obj.SetActive(true);
+        top.SetDelay(5f);
     }
 }

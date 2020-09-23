@@ -19,6 +19,12 @@ public class Topping : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void SetDelay(float destoryDelay)
+    {
+        IEnumerator delayCoroutine = Delay(destoryDelay);
+        StartCoroutine(delayCoroutine);
+    }
+
     public IEnumerator Delay(float destroyDelay)
     {
         effectAnimator.SetTrigger("Created");
