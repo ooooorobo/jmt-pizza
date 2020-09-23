@@ -30,6 +30,12 @@ public class DefaultSpawner : MonoBehaviour
         parentObject = new GameObject("spawnParent").transform;
 
         MakePool();
+        InitMore();
+    }
+
+    protected virtual void InitMore()
+    {
+        return;
     }
     
     public void InitValue(float spawnDelay, Vector3 center, float tileSize)
@@ -65,9 +71,11 @@ public class DefaultSpawner : MonoBehaviour
         while (count++ < poolSize)
         {
             GameObject newObj = Instantiate(spawnObject, new Vector3(-100, -100, 0), Quaternion.identity);
-            
+
             newObj.transform.parent = parentObject;
-            newObj.SetActive(false);
+            newObj.name = "object" + count * (poolTail + 1);
+            // newObj.SetActive(false);
+            newObj.GetComponent<BoxCollider2D>().enabled = false;
             
             pool.Add(newObj);
         }
@@ -101,9 +109,11 @@ public class DefaultSpawner : MonoBehaviour
         Vector3 newPosition = FindPosition();
 
         obj.transform.position = newPosition;
-        obj.SetActive(true);
-                
+        
         InitSpawnedObject(obj);
+        
+        obj.SetActive(true);
+        obj.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     IEnumerator SpawnCoroutine()
@@ -127,7 +137,7 @@ public class DefaultSpawner : MonoBehaviour
         }
     }
 
-    protected void InitSpawnedObject(GameObject obj)
+    protected virtual void InitSpawnedObject(GameObject obj)
     {
         return;
     }

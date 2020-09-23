@@ -14,6 +14,8 @@ public class SpawnerFactory : MonoBehaviour
 	public GameObject oven;
 	public GameObject obstacle;
 
+	public Sprite[] toppingSprites;
+
 	private float spawnDelay;
 	private Vector3 center;
 	private float tileSize;
@@ -31,19 +33,17 @@ public class SpawnerFactory : MonoBehaviour
 		this.center = centerPosition.position;
 		this.tileSize = tileSize;
 	}
-	
-	public DefaultSpawner CreateSpawner(GameObject obj)
+
+	public void CreateSpawner(GameObject obj)
 	{
 		requestSpawner = obj.AddComponent<WithRequestSpawner>();
 		
-		
-		DefaultSpawner spawner = obj.AddComponent<DefaultSpawner>();
-		spawner.spawnObject = coin;
-		periodicSpawners.Add(spawner);
+		ToppingSpawner toppingSpawner = obj.AddComponent<ToppingSpawner>();
+		toppingSpawner.spawnObject = topping;
+		toppingSpawner.toppingSprites = toppingSprites;
+		periodicSpawners.Add(toppingSpawner);
 
-		InitPeriodicSpawners();
-		
-		return spawner;
+		InitPeriodicSpawners(); 
 	}
 
 	private void InitPeriodicSpawners()
