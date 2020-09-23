@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: fc09f2143167347209151a43d2feb54e
+guid: 7eb684f011b9f47aaaa140b963d8bbad
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - topping: {fileID: 6071970254904055127, guid: 4f7d308ddb61946bd9128ef603ffeabe,
       type: 3}
+  - coin: {fileID: 1036942501770878957, guid: 81d21e773086241d4900e12033cd9645, type: 3}
   - oven: {fileID: 1979575075988671185, guid: 512e02fba5f95496bbbf64363e52de3c, type: 3}
-  - oParent: {instanceID: 0}
-  - xParent: {instanceID: 0}
   - obstacle: {fileID: 5263475443359711490, guid: 287c80ceb1c944bff95dc40fd8c9554c,
       type: 3}
+  - requestSpawner: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
