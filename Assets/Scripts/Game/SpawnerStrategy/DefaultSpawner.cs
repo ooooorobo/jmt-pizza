@@ -74,11 +74,18 @@ public class DefaultSpawner : MonoBehaviour
 
             newObj.transform.parent = parentObject;
             newObj.name = "object" + count * (poolTail + 1);
-            // newObj.SetActive(false);
+            newObj.SetActive(false);
             newObj.GetComponent<BoxCollider2D>().enabled = false;
+
+            InitPoolObject(newObj);
             
             pool.Add(newObj);
         }
+    }
+
+    protected virtual void InitPoolObject(GameObject obj)
+    {
+        return;
     }
 
     private Vector3 FindPosition()
