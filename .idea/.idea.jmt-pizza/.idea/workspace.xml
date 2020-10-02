@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/IDestroy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/IDestroy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithDestroySpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithDestroySpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/IData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/StageData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/DefaultSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/ToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/IDestroy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithDestroySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hPibtDzywPoHIsLatwpVJUhtCK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="" />
+      <created>1599919209154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599919209154</updated>
+      <workItem from="1599919214986" duration="7920000" />
+      <workItem from="1600252291325" duration="258000" />
+      <workItem from="1600579214933" duration="48000" />
+      <workItem from="1600579308934" duration="2093000" />
+      <workItem from="1600670556850" duration="188000" />
+      <workItem from="1600857528018" duration="3398000" />
+      <workItem from="1601114687809" duration="2303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="221" y="89" key="SettingsEditor" timestamp="1600586380645">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600586380645" />
+    <state x="221" y="104" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1600580150246" />
+    <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog" timestamp="1600858152294">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1600858152294" />
+    <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog/0.23.1440.822@0.23.1440.822" timestamp="1600590213476" />
+    <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="362" y="61" width="537" height="822" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1600181917072" />
+    <state x="0" y="39" width="694" height="822" key="find.popup" timestamp="1600591483088">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1601116059863">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1601116059863" />
+  </component>
+</project>
