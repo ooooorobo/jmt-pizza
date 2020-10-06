@@ -41,7 +41,6 @@ public class ToppingSpawner : DefaultSpawner
         top.isO = isOTopping[index];
         top.id = index;
         top.isCheese = index == 0;
-        obj.SetActive(true);
         top.SetDelay(5f);
     }
 }

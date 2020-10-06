@@ -233,6 +233,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+    public void GetCoin()
+    {
+        Debug.Log("코인을 얻엇다!");
+    }
+
     public void GameOver()
     {
         Stop();

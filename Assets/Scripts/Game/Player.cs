@@ -176,6 +176,9 @@ public class Player : Tail
             case "Obstacle":
                 GameManager.Instance().GameOver();
                 break;
+            case "Coin":
+                GameManager.Instance().GetCoin();
+                break;
         }
     }
 }

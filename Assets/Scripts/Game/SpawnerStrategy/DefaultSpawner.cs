@@ -74,9 +74,7 @@ public class DefaultSpawner : MonoBehaviour
 
             newObj.transform.parent = parentObject;
             newObj.name = "object" + count * (poolTail + 1);
-            newObj.SetActive(false);
             newObj.GetComponent<BoxCollider2D>().enabled = false;
-
             InitPoolObject(newObj);
             
             pool.Add(newObj);
@@ -117,10 +115,10 @@ public class DefaultSpawner : MonoBehaviour
 
         obj.transform.position = newPosition;
         
-        InitSpawnedObject(obj);
-        
         obj.SetActive(true);
         obj.GetComponent<BoxCollider2D>().enabled = true;
+
+        InitSpawnedObject(obj);
     }
 
     IEnumerator SpawnCoroutine()

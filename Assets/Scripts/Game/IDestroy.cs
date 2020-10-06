@@ -6,6 +6,11 @@ public class IDestroy: MonoBehaviour
     public float blinkTime = 2f;
     public float blinkDelay = 0.3f;
     
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+    
     public IEnumerator Delay(float destroyDelay)
     {
         yield return new WaitForSeconds(destroyDelay - blinkTime);

@@ -13,13 +13,13 @@ public class Topping : IDestroy
     private void Start ()
     {
         sprite = GetComponent<SpriteRenderer>();
-        effectAnimator = transform.GetChild(0).GetComponent<Animator>();
+        // effectAnimator = transform.GetChild(0).GetComponent<Animator>();
         gameObject.SetActive(false);
     }
 
     public void SetDelay(float destoryDelay)
     {
-        effectAnimator.SetTrigger("Created");
+        // effectAnimator.SetTrigger("Created");
 
         IEnumerator delayCoroutine = Delay(destoryDelay);
         StartCoroutine(delayCoroutine);
