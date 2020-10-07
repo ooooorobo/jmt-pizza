@@ -99,6 +99,11 @@ public class Player : Tail
         int count = 0;
         Tail nowOven = this;
 
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
         while (count++ < tailCount + 1)
 		{
             nowOven.OnEnterOven();
