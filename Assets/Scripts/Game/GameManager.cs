@@ -178,10 +178,12 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Animator>().SetTrigger("Sad");
         }
 
-        if (t.isCheese) {
+        if (mode == GameMode.INFINITE && t.isCheese) {
             cheese++;
+            
             if (addGaugeCoroutine != null)
                 StopCoroutine(addGaugeCoroutine);
+            
             addGaugeCoroutine = AddGauge((float)cheese / cheeseGoal);
             StartCoroutine(addGaugeCoroutine);
         }
@@ -195,13 +197,7 @@ public class GameManager : MonoBehaviour
 
         if (score < 0)
             GameOver();
-
-        if (cheese == cheeseGoal && !ovenOpened && mode == GameMode.INFINITE)
-        {
-            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
-            ovenOpened = true;
-        }
-
+        
         CheckGameClear();
     }
 
@@ -233,6 +229,11 @@ public class GameManager : MonoBehaviour
 		{
             spawnerFactory.RequestSpawn(RequestEnum.OVEN);
 		}
+        else if (mode == GameMode.INFINITE && cheese >= cheeseGoal && !ovenOpened)
+        {
+            ovenOpened = true;
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
+        }
 	}
 
     public void GetCoin()

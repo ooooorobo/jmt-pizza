@@ -171,7 +171,6 @@ public class Player : Tail
 
             case "Oven":
                 StartCoroutine("EnterOven");
-
                 break;
             case "Obstacle":
                 GameManager.Instance().GameOver();

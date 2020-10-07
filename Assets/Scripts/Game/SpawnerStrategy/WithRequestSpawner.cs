@@ -18,6 +18,6 @@ public class WithRequestSpawner : DefaultSpawner
         
         temp.SetActive(false);
         
-        SpawnObject(obj);
+        SpawnObject(temp);
     }
 }
