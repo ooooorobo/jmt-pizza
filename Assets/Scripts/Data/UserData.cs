@@ -7,7 +7,9 @@ namespace Assets.Scripts.Data
     {
         public int maxScore = 0;
         public int clearCount = 0;
+        public int coin = 0;
         private string fileName = "userData";
+        
         public void SaveClearData(int score)
         {
             if (this.maxScore < score)
@@ -15,6 +17,13 @@ namespace Assets.Scripts.Data
             
             clearCount++;
 
+            DataManager.SaveIntoJson(this, fileName);
+        }
+
+        public void SaveCoin(int amount)
+        {
+            coin += amount;
+            
             DataManager.SaveIntoJson(this, fileName);
         }
     }

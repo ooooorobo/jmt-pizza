@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     public Text txtScore;
     public Text clearScoreTxt;
     public Text maxScore;
+    public Text userCoin;
     public GameObject clearPanel;
     public GameObject overPanel;
     public Image CheeseGauge;
@@ -106,6 +107,7 @@ public class GameManager : MonoBehaviour
         if (userData == null) userData = new UserData();
 
         maxScore.text = "최고 점수: " + userData.maxScore + "₩";
+        userCoin.text = "유저 코인: " + userData.coin;
             
         if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
 		{
@@ -235,7 +237,8 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin()
     {
-        Debug.Log("코인을 얻엇다!");
+        userData.SaveCoin(200);
+        userCoin.text = "유저 코인: " + userData.coin;
     }
 
     public void GameOver()

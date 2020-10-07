@@ -178,6 +178,7 @@ public class Player : Tail
                 break;
             case "Coin":
                 GameManager.Instance().GetCoin();
+                col.gameObject.SetActive(false);
                 break;
         }
     }
