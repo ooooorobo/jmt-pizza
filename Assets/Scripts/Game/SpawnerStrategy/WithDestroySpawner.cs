@@ -12,7 +12,6 @@ public class WithDestroySpawner: DefaultSpawner
     }
     protected override void InitSpawnedObject(GameObject obj)
     {
-        IEnumerator delayCoroutine = destroy.Delay(destroyDelay);
-        StartCoroutine(delayCoroutine);
+        obj.GetComponent<IDestroy>().SetDelay(destroyDelay);
     }
 }

@@ -44,7 +44,7 @@ public class SpawnerFactory : MonoBehaviour
         periodicSpawners.Add(toppingSpawner);
 
         WithDestroySpawner coinSpawner = obj.AddComponent<WithDestroySpawner>();
-        coinSpawner.spawnObject = coin; 
+        coinSpawner.spawnObject = coin;
         periodicSpawners.Add(coinSpawner);
 
         InitPeriodicSpawners(); 

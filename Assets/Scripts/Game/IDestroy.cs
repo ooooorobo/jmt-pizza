@@ -11,6 +11,14 @@ public class IDestroy: MonoBehaviour
         gameObject.SetActive(false);
     }
     
+    public void SetDelay(float destoryDelay)
+    {
+        // effectAnimator.SetTrigger("Created");
+
+        IEnumerator delayCoroutine = Delay(destoryDelay);
+        StartCoroutine(delayCoroutine);
+    }
+    
     public IEnumerator Delay(float destroyDelay)
     {
         yield return new WaitForSeconds(destroyDelay - blinkTime);
