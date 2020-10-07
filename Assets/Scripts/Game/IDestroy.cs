@@ -11,7 +11,7 @@ public class IDestroy: MonoBehaviour
         gameObject.SetActive(false);
     }
     
-    public void SetDelay(float destoryDelay)
+    public virtual void SetDelay(float destoryDelay)
     {
         // effectAnimator.SetTrigger("Created");
 

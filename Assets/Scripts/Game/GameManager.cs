@@ -138,7 +138,6 @@ public class GameManager : MonoBehaviour
         }
 
         InitGame();
-        
     }
 
     private void InitGame()
@@ -222,17 +221,17 @@ public class GameManager : MonoBehaviour
         // original / avoid
         if (minScore > 0 && score >= minScore)
 		{
-            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
 		}
         // goal topping
         else if (goalTopping > 0 && goalToppingCNT >= goalTopping)
 		{
-            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
 		}
         else if (mode == GameMode.INFINITE && cheese >= cheeseGoal && !ovenOpened)
         {
             ovenOpened = true;
-            spawnerFactory.RequestSpawn(RequestEnum.OVEN);
+            spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
         }
 	}
 

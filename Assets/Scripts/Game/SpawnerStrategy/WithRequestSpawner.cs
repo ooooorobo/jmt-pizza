@@ -12,12 +12,14 @@ public class WithRequestSpawner : DefaultSpawner
         Debug.Log("Please give GameObject parameter");
     }
 
-    public void StartSpawn(GameObject obj)
+    public void StartSpawn(GameObject obj, int amount)
     {
-        GameObject temp = Instantiate(obj, new Vector3(-200, -200, 0), Quaternion.identity);
-        
-        temp.SetActive(false);
-        
-        SpawnObject(temp);
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject temp = Instantiate(obj, new Vector3(-200, -200, 0), Quaternion.identity);
+            temp.SetActive(false);
+
+            SpawnObject(temp);
+        }
     }
 }

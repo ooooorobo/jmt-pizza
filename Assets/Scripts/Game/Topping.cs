@@ -17,7 +17,7 @@ public class Topping : IDestroy
         gameObject.SetActive(false);
     }
 
-    public void SetDelay(float destoryDelay)
+    public override void SetDelay(float destoryDelay)
     {
         // effectAnimator.SetTrigger("Created");
 

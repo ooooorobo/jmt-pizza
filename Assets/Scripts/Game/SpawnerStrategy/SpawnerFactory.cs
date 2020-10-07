@@ -46,7 +46,7 @@ public class SpawnerFactory : MonoBehaviour
         WithDestroySpawner coinSpawner = obj.AddComponent<WithDestroySpawner>();
         coinSpawner.spawnObject = coin;
         periodicSpawners.Add(coinSpawner);
-
+     
         InitPeriodicSpawners(); 
     }
 
@@ -74,15 +74,15 @@ public class SpawnerFactory : MonoBehaviour
         }
     }
 
-    public void RequestSpawn(RequestEnum request)
+    public void RequestSpawn(RequestEnum request, int amount)
     {
         switch (request)
         {
             case RequestEnum.OVEN:
-                requestSpawner.StartSpawn(oven);
+                requestSpawner.StartSpawn(oven, amount);
                 break;
             case RequestEnum.OBSTACLE:
-                requestSpawner.StartSpawn(obstacle);
+                requestSpawner.StartSpawn(obstacle, amount);
                 break;
         }
     }
