@@ -17,6 +17,8 @@ public class StageManager : MonoBehaviour
 	    userStageData = new StoryData();
 		userStageData.GetStageData(stageCount);
 
+		bool isDone = true;
+
         for (int i = 0; i < stageCount; i++)
 		{
             Transform newBtn = Instantiate(stageButton, Vector2.zero, Quaternion.identity).transform;
@@ -26,7 +28,12 @@ public class StageManager : MonoBehaviour
             btnText.text = "Stage " + (i + 1);
 
             if (userStageData.stages[i].isCleared) btnText.text += "\n클리어!";
-            else btnText.text += "\n아직!!";
+            else
+            {
+	            btnText.text += "\n아직!!";
+	            if (isDone) isDone = false;
+	            else newBtn.GetComponent<Button>().interactable = false;
+            }
            
             int x = i;
             newBtn.GetComponent<Button>().onClick.AddListener(() => StageLoader.Instance().SetStageData(x));
