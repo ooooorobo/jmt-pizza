@@ -271,7 +271,7 @@ public class GameManager : MonoBehaviour
 
     public void GoMain()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene(mode == GameMode.INFINITE ? "Lobby" : "StageSelect");
     }
 
     IEnumerator AddGauge (float maximum)
