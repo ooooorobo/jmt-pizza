@@ -37,7 +37,8 @@ public class SpawnerFactory : MonoBehaviour
     public void CreateSpawner(GameObject obj)
     {
         requestSpawner = obj.AddComponent<WithRequestSpawner>();
-		
+        requestSpawner.InitSpawner(spawnDelay, center, tileSize);
+        
         ToppingSpawner toppingSpawner = obj.AddComponent<ToppingSpawner>();
         toppingSpawner.spawnObject = topping;
         toppingSpawner.toppingSprites = toppingSprites;

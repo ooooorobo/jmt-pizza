@@ -29,6 +29,7 @@ public class TileMaker : MonoBehaviour
         startY = center.y + (row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1);
 
         Transform tileParent = new GameObject("tileparent").transform;
+        tileParent.position = center;
 
         // tile을 row, column만큼 spawn
         for (int x = 0; x < column; x++)

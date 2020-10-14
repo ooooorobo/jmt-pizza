@@ -33,6 +33,7 @@ public class Player : Tail
         this.distance = distance;
         direction = new Vector3(0, 1f, 0);
         preDirection = direction;
+        transform.position = center;
 
         this.speed = speed;
         this.accel = accel;
