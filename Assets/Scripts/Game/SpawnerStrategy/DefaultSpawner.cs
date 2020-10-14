@@ -28,6 +28,7 @@ public class DefaultSpawner : MonoBehaviour
 
         pool = new List<GameObject>();
         parentObject = new GameObject("spawnParent").transform;
+        parentObject.position = center;
 
         MakePool();
         InitMore();
@@ -86,8 +87,10 @@ public class DefaultSpawner : MonoBehaviour
         return;
     }
 
-    private Vector3 FindPosition()
+    private Vector3 FindPosition(int count)
     {
+        if (count > 10) return new Vector3(-200, -200, 0);
+
         float x = center.x + Random.Range(0, row) * tileSize;
         float y = center.y + Random.Range(0, column) * tileSize * -1;
 
@@ -98,7 +101,7 @@ public class DefaultSpawner : MonoBehaviour
 
         if (CheckPosition(pos)) return pos;
         
-        return FindPosition();
+        return FindPosition(count + 1);
     }
     private bool CheckPosition(Vector3 pos)
     {
@@ -111,7 +114,7 @@ public class DefaultSpawner : MonoBehaviour
 
     protected void SpawnObject(GameObject obj)
     {
-        Vector3 newPosition = FindPosition();
+        Vector3 newPosition = FindPosition(0);
 
         obj.transform.position = newPosition;
         
