@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     }
 
     TileMaker tileMaker;
-    private SpawnerFactory spawnerFactory;
+    private IDefaultSpawnerStrategy spawnerFactory;
     public JoystickController joyController;
     public Player player;
 
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     [Header("Data")] private UserData userData;
 
     private GameMode mode = GameMode.INFINITE;
+    private StageMode stageMode = global::StageMode.NONE;
 
     IEnumerator addGaugeCoroutine;
 
@@ -93,8 +94,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        spawnerFactory = GetComponent<SpawnerFactory>();
     }
 
     void Start()
@@ -117,7 +116,7 @@ public class GameManager : MonoBehaviour
             cntXTopping = StageLoader.Instance().cntXTopping;
             obstacleCount = StageLoader.Instance().obstacleCount;
             mode = StageLoader.Instance().mode;
-
+            stageMode = StageLoader.Instance().stageMode;
             goalToppingId = 0;
 
             StageID.text = "stage id: " + stageNum;
@@ -134,7 +133,10 @@ public class GameManager : MonoBehaviour
             GoalScore.gameObject.SetActive(false);
             StageMode.gameObject.SetActive(false);
             GoalToppingCNT.gameObject.SetActive(false);
+            stageMode = global::StageMode.NONE;
         }
+
+        spawnerFactory = GetSpawnerStrategyByMode(stageMode);
 
         InitGame();
     }
@@ -148,7 +150,7 @@ public class GameManager : MonoBehaviour
         score = initialScore;
 
         spawnerFactory.InitFactory(spawnDelay, centerPosition, tileSize);
-        spawnerFactory.CreateSpawner(gameObject);
+        spawnerFactory.AttachSpawner(gameObject);
         
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, speed, accelerate, centerPosition.position);
@@ -159,6 +161,21 @@ public class GameManager : MonoBehaviour
         right.onClick.AddListener(() => player.SetDirection("21"));
 
         joyController.Init(player);
+    }
+    
+    private IDefaultSpawnerStrategy GetSpawnerStrategyByMode(StageMode stageMode)
+    {
+        switch (stageMode)
+        {
+            case global::StageMode.ORIGINAL:
+                return gameObject.AddComponent<InfiniteSpawnerStrategy>();
+            case global::StageMode.AVOID:
+                return gameObject.AddComponent<AvoidSpawnerStrategy>();
+            case global::StageMode.CLEAN_DUST:
+                return gameObject.AddComponent<CleanSpawnerStrategy>();
+            default:
+                return gameObject.AddComponent<InfiniteSpawnerStrategy>();
+        }
     }
 
     public void ChangeScore(Topping t )
@@ -282,4 +299,6 @@ public class GameManager : MonoBehaviour
             yield return null;
 		}
 	}
+    
+    
 }

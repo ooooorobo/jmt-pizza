@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDefaultSpawnerFactory : MonoBehaviour
+public class IDefaultSpawnerStrategy : MonoBehaviour
 {
     public GameObject topping;
     public GameObject coin;
@@ -32,6 +32,9 @@ public class IDefaultSpawnerFactory : MonoBehaviour
 
     public void AttachSpawner(GameObject obj)
     {
+        requestSpawner = obj.AddComponent<WithRequestSpawner>();
+        requestSpawner.InitSpawner(spawnDelay, center, tileSize);
+
         AddSpawnerComponent(obj);
 
         InitPeriodicSpawners();
