@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum RequestEnum
-{
-    OVEN, OBSTACLE
-}
-public class SpawnerFactory : MonoBehaviour
+public class IDefaultSpawnerFactory : MonoBehaviour
 {
     public GameObject topping;
     public GameObject coin;
@@ -16,17 +12,17 @@ public class SpawnerFactory : MonoBehaviour
 
     public Sprite[] toppingSprites;
 
-    private float spawnDelay;
-    private Vector3 center;
-    private float tileSize;
+    protected float spawnDelay;
+    protected Vector3 center;
+    protected float tileSize;
 
     // 주기적으로 오브젝트를 생성하는 스포너 (Topping, Coin 등)
     public List<DefaultSpawner> periodicSpawners = new List<DefaultSpawner>();
-	
+
     // Oven, Obstacle 등 한 번 생성 후 사라지거나 하지 않고
     // 요청에 의해 생성되는 오브젝트 생성 위한 스포너 
     public WithRequestSpawner requestSpawner;
-	
+
     public void InitFactory(float spawnDelay, Transform centerPosition, float tileSize)
     {
         this.spawnDelay = spawnDelay;
@@ -34,23 +30,18 @@ public class SpawnerFactory : MonoBehaviour
         this.tileSize = tileSize;
     }
 
-    public void CreateSpawner(GameObject obj)
+    public void AttachSpawner(GameObject obj)
     {
-        requestSpawner = obj.AddComponent<WithRequestSpawner>();
-        requestSpawner.InitSpawner(spawnDelay, center, tileSize);
-        
-        ToppingSpawner toppingSpawner = obj.AddComponent<ToppingSpawner>();
-        toppingSpawner.spawnObject = topping;
-        toppingSpawner.toppingSprites = toppingSprites;
-        periodicSpawners.Add(toppingSpawner);
+        AddSpawnerComponent(obj);
 
-        WithDestroySpawner coinSpawner = obj.AddComponent<WithDestroySpawner>();
-        coinSpawner.spawnObject = coin;
-        periodicSpawners.Add(coinSpawner);
-     
-        InitPeriodicSpawners(); 
+        InitPeriodicSpawners();
     }
 
+    protected virtual void AddSpawnerComponent(GameObject obj)
+    {
+        
+    }
+    
     private void InitPeriodicSpawners()
     {
         foreach (DefaultSpawner spawner in  periodicSpawners)
@@ -58,7 +49,7 @@ public class SpawnerFactory : MonoBehaviour
             spawner.InitSpawner(spawnDelay, center, tileSize);
         }
     }
-
+    
     public void StartPeriodicSpawn()
     {
         foreach (DefaultSpawner spawner in  periodicSpawners)
@@ -74,7 +65,7 @@ public class SpawnerFactory : MonoBehaviour
             spawner.Stop();
         }
     }
-
+    
     public void RequestSpawn(RequestEnum request, int amount)
     {
         switch (request)
@@ -87,6 +78,4 @@ public class SpawnerFactory : MonoBehaviour
                 break;
         }
     }
-
-
 }

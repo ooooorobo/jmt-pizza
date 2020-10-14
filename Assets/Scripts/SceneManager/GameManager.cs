@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
         }
 
         spawnerFactory = GetComponent<SpawnerFactory>();
-        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
