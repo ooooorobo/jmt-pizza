@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -47,7 +48,7 @@ public class DialogManager : MonoBehaviour
         {
             if (isTyping) StopTypingEffect();
             else if (dialogIndex < dialogLength) ReadDialogLine();
-            else Debug.Log("끝");
+            else OnScriptEnded();
         }
     }
     
@@ -90,6 +91,11 @@ public class DialogManager : MonoBehaviour
         
         StopCoroutine(typingEffect);
         typingEffect = null;
+    }
+
+    public void OnScriptEnded()
+    {
+        Debug.Log("끝");
     }
 
     IEnumerator TypingTextEffect()

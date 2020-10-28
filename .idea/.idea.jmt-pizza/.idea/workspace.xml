@@ -23,20 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Dialog/kingdom_script_stage_1.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Dialog/kingdom_script_stage_1.csv.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/background_house.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/background_house.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/background_village.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/background_village.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/dou_idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/dou_idle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/mom_idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Datas/Sprite/mom_idle.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StoryDialog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StoryDialog.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +123,7 @@
       <workItem from="1602068038209" duration="4143000" />
       <workItem from="1602419073181" duration="1867000" />
       <workItem from="1602668789131" duration="4574000" />
-      <workItem from="1603893942516" duration="1159000" />
+      <workItem from="1603893942516" duration="1447000" />
     </task>
     <servers />
   </component>
