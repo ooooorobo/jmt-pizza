@@ -10,5 +10,7 @@ public class AvoidSpawnerStrategy : IDefaultSpawnerStrategy
         toppingSpawner.spawnObject = topping;
         toppingSpawner.toppingSprites = toppingSprites;
         periodicSpawners.Add(toppingSpawner);
+        
+        
     }
 }

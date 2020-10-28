@@ -16,28 +16,35 @@
           </e>
           <e p="DataManager.cs" t="Include" />
           <e p="Game" t="Include">
-            <e p="GameManager.cs" t="Include" />
+            <e p="IDestroy.cs" t="Include" />
             <e p="JoystickController.cs" t="Include" />
             <e p="Player.cs" t="Include" />
-            <e p="SpawnerFactory.cs" t="Include" />
             <e p="SpawnerStrategy" t="Include">
-              <e p="AvoidToppingSpawner.cs" t="Include" />
-              <e p="DefaultToppingSpawner.cs" t="Include" />
-              <e p="IToppingSpawner.cs" t="Include" />
-              <e p="SpawnerV2" t="Include">
-                <e p="DefaultSpawner.cs" t="Include" />
-                <e p="ToppingSpawner.cs" t="Include" />
-                <e p="WithRequestSpawner.cs" t="Include" />
-              </e>
+              <e p="DefaultSpawner.cs" t="Include" />
+              <e p="ToppingSpawner.cs" t="Include" />
+              <e p="WithDestroySpawner.cs" t="Include" />
+              <e p="WithRequestSpawner.cs" t="Include" />
+            </e>
+            <e p="StageStrategy" t="Include">
+              <e p="AvoidSpawnerStrategy.cs" t="Include" />
+              <e p="CleanSpawnerStrategy.cs" t="Include" />
+              <e p="IDefaultSpawnerStrategy.cs" t="Include" />
+              <e p="InfiniteSpawnerStrategy.cs" t="Include" />
+              <e p="SpawnerFactory.cs" t="Include" />
             </e>
             <e p="Tail.cs" t="Include" />
             <e p="TileMaker.cs" t="Include" />
             <e p="Topping.cs" t="Include" />
           </e>
+          <e p="SceneManager" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="LoadSceneManager.cs" t="Include" />
+            <e p="LobbyManager.cs" t="Include" />
+            <e p="StageManager.cs" t="Include" />
+          </e>
           <e p="StageLoader.cs" t="Include" />
           <e p="Story" t="Include">
             <e p="DialogManager.cs" t="Include" />
-            <e p="StageManager.cs" t="Include" />
           </e>
         </e>
       </e>

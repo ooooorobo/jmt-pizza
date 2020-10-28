@@ -19,16 +19,25 @@ public class DialogManager : MonoBehaviour
     [Header("UI")]
     public Text charName;
     public Text charContents;
+    public Image background;
+    public Image left;
+    public Image right;
     
     
     private void Awake()
     {
-        dialogList = CSVReader.Read("Datas/Dialog/story_" + stageNumber);
+        dialogList = CSVReader.Read("Datas/Dialog/kingdom_script_stage_" + stageNumber);
         dialogLength = dialogList.Count;
     }
 
     private void Start()
     {
+        // for (int i = 0; i < dialogLength; i++)
+        // {
+        //     Dictionary<string, object> dialog = dialogList[dialogIndex++];
+        //     
+        // }
+        
         ReadDialogLine();
     }
 
@@ -46,8 +55,23 @@ public class DialogManager : MonoBehaviour
     {
         Dictionary<string, object> dialog = dialogList[dialogIndex++];
         
-        charName.text = "";
-        originalText = dialog["content"].ToString();
+        charName.text = dialog["name"].ToString();;
+        originalText = dialog["contents"].ToString();
+        
+        // TODO:: 리소스 미리 불러오는 방식으로 변경 필요
+        background.sprite = Resources.Load<Sprite>("Datas/Sprite/" + dialog["background"]);
+        if (dialog["left"].ToString().Length > 0)
+        {
+            left.sprite = Resources.Load<Sprite>("Datas/Sprite/" + dialog["left"]);
+            left.enabled = true;
+        }
+        else left.enabled = false;
+        if (dialog["right"].ToString().Length > 0)
+        {
+            right.sprite = Resources.Load<Sprite>("Datas/Sprite/" + dialog["right"]);
+            right.enabled = true;
+        }
+        else right.enabled = false;
 
         if (typingEffect != null)
             StopCoroutine(typingEffect);
