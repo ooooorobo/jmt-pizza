@@ -23,8 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +67,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/IDestroy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithRequestSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/SceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadSceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/TileMaker.cs" />
@@ -80,6 +85,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs" />
       </list>
     </option>
   </component>
@@ -123,7 +130,7 @@
       <workItem from="1602419073181" duration="1867000" />
       <workItem from="1602668789131" duration="4574000" />
       <workItem from="1603893942516" duration="1873000" />
-      <workItem from="1604150013555" duration="14000" />
+      <workItem from="1604150013555" duration="996000" />
     </task>
     <servers />
   </component>

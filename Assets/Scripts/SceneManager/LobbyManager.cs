@@ -18,4 +18,9 @@ public class LobbyManager : MonoBehaviour
             ?? new UserData();
         userCoin.text = userData.coin.ToString();
     }
+
+    public void MoveScene(string sceneName)
+    {
+        LoadingScnenManager.LoadScene(sceneName);
+    }
 }
