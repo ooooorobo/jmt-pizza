@@ -33,6 +33,7 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
+        // 필요한 Sprite 리소스 여기서 미리 가져올 것
         // for (int i = 0; i < dialogLength; i++)
         // {
         //     Dictionary<string, object> dialog = dialogList[dialogIndex++];
@@ -73,6 +74,22 @@ public class DialogManager : MonoBehaviour
             right.enabled = true;
         }
         else right.enabled = false;
+
+        switch (dialog["highlight"])
+        {
+            case "LEFT":
+                left.color = Color.white;
+                right.color = new Color(0.3f, 0.3f, 0.3f);
+                break;
+            case "RIGHT":
+                right.color = Color.white;
+                left.color = new Color(0.3f, 0.3f, 0.3f);
+                break;
+            default:
+                right.color = new Color(0.3f, 0.3f, 0.3f);
+                left.color = new Color(0.3f, 0.3f, 0.3f);
+                break;
+        }
 
         if (typingEffect != null)
             StopCoroutine(typingEffect);
