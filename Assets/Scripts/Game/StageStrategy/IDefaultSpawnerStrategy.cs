@@ -23,6 +23,15 @@ public class IDefaultSpawnerStrategy : MonoBehaviour
     // 요청에 의해 생성되는 오브젝트 생성 위한 스포너 
     public WithRequestSpawner requestSpawner;
 
+    public void InitSpawnPrefabs(GameObject topping, GameObject coin, GameObject oven, GameObject obstacle,
+        Sprite[] toppingSprites)
+    {
+        this.topping = topping;
+        this.coin = coin;
+        this.oven = oven;
+        this.obstacle = obstacle;
+        this.toppingSprites = toppingSprites;
+    }
     public void InitFactory(float spawnDelay, Transform centerPosition, float tileSize)
     {
         this.spawnDelay = spawnDelay;

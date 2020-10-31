@@ -23,14 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Loading.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +76,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
       </list>
     </option>
   </component>
@@ -130,7 +127,7 @@
       <workItem from="1602419073181" duration="1867000" />
       <workItem from="1602668789131" duration="4574000" />
       <workItem from="1603893942516" duration="1873000" />
-      <workItem from="1604150013555" duration="996000" />
+      <workItem from="1604150013555" duration="1717000" />
     </task>
     <servers />
   </component>
@@ -159,9 +156,10 @@
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600586380645" />
     <state x="221" y="104" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1600580150246" />
-    <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog" timestamp="1600590213476">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog" timestamp="1604151949847">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1604151949847" />
     <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog/0.23.1440.822@0.23.1440.822" timestamp="1600590213476" />
     <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
       <screen x="0" y="0" width="1440" height="900" />
@@ -171,9 +169,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1602674914782">
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1604151348341">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1602674914782" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1604151348341" />
   </component>
 </project>

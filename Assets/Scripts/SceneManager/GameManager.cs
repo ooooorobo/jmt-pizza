@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
             stageMode = global::StageMode.NONE;
         }
 
-        spawnerFactory = GetSpawnerStrategyByMode(stageMode);
+        spawnerFactory = GetComponent<SpawnerFactory>().GetSpawnerStrategyByMode(gameObject, stageMode);
 
         InitGame();
     }
@@ -161,21 +161,6 @@ public class GameManager : MonoBehaviour
         right.onClick.AddListener(() => player.SetDirection("21"));
 
         joyController.Init(player);
-    }
-    
-    private IDefaultSpawnerStrategy GetSpawnerStrategyByMode(StageMode stageMode)
-    {
-        switch (stageMode)
-        {
-            case global::StageMode.ORIGINAL:
-                return gameObject.AddComponent<InfiniteSpawnerStrategy>();
-            case global::StageMode.AVOID:
-                return gameObject.AddComponent<AvoidSpawnerStrategy>();
-            case global::StageMode.CLEAN_DUST:
-                return gameObject.AddComponent<CleanSpawnerStrategy>();
-            default:
-                return gameObject.AddComponent<InfiniteSpawnerStrategy>();
-        }
     }
 
     public void ChangeScore(Topping t )

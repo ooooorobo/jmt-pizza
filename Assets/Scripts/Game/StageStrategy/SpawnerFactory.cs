@@ -8,18 +8,34 @@ public enum RequestEnum
 }
 public class SpawnerFactory : MonoBehaviour
 {
+    public GameObject topping;
+    public GameObject coin;
+    public GameObject oven;
+    public GameObject obstacle;
+
+    public Sprite[] toppingSprites;
+    
     public IDefaultSpawnerStrategy GetSpawnerStrategyByMode(GameObject obj, StageMode stageMode)
     {
+        IDefaultSpawnerStrategy strategy;
+        
         switch (stageMode)
         {
             case StageMode.ORIGINAL:
-                return obj.AddComponent<InfiniteSpawnerStrategy>();
+                strategy = gameObject.AddComponent<InfiniteSpawnerStrategy>();
+                break;
             case StageMode.AVOID:
-                return obj.AddComponent<AvoidSpawnerStrategy>();
+                strategy = gameObject.AddComponent<AvoidSpawnerStrategy>();
+                break;
             case StageMode.CLEAN_DUST:
-                return obj.AddComponent<CleanSpawnerStrategy>();
+                strategy = gameObject.AddComponent<CleanSpawnerStrategy>();
+                break;
             default:
-                return obj.AddComponent<InfiniteSpawnerStrategy>();
+                strategy = gameObject.AddComponent<InfiniteSpawnerStrategy>();
+                break;
         }
+
+        strategy.InitSpawnPrefabs(topping, coin, oven, obstacle, toppingSprites);
+        return strategy;
     }
 }
