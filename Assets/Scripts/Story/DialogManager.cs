@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    private int stageNumber = 1;
     private List<Dictionary<string, object>> dialogList;
-    private int dialogIndex = 0;
-    private int dialogLength;
     
-    private bool isTyping = false;
-    private string originalText = "";
+    public int dialogIndex = 0;
+    public int dialogLength;
+    
+    public bool isTyping = false;
+    public string originalText = "";
 
     private IEnumerator typingEffect;
     
@@ -27,7 +27,7 @@ public class DialogManager : MonoBehaviour
     
     private void Awake()
     {
-        dialogList = CSVReader.Read("Datas/Dialog/kingdom_script_stage_" + stageNumber);
+        dialogList = StageLoader.Instance().dialogList;
         dialogLength = dialogList.Count;
     }
 
@@ -112,12 +112,14 @@ public class DialogManager : MonoBehaviour
 
     public void OnScriptEnded()
     {
-        Debug.Log("끝");
+        LoadingSceneManager.LoadScene("Main");
     }
 
     IEnumerator TypingTextEffect()
     {
+        Debug.Log("a");
         isTyping = true;
+        
         string tempString = "";
         int charIndex = 0;
 
@@ -125,7 +127,7 @@ public class DialogManager : MonoBehaviour
         {
             tempString += originalText[charIndex++];
             charContents.text = tempString;
-
+            
             yield return new WaitForSeconds(0.03f);
         }
 

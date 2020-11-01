@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Data;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public enum GameMode
 {
@@ -33,7 +29,7 @@ public class StageLoader : MonoBehaviour
         else return instance;
 	}
 
-
+    public List<Dictionary<string, object>> dialogList;
     private List<Dictionary<string, object>> stageDataList;
 
     public GameMode mode = GameMode.LOBY;
@@ -69,6 +65,8 @@ public class StageLoader : MonoBehaviour
 
     public void SetStageData(int stageNumber)
 	{
+        dialogList = CSVReader.Read("Datas/Dialog/kingdom_script_stage_" + (stageNumber + 1));
+        
         Dictionary<string, object> stageData = stageDataList[stageNumber];
 
         stageId = stageData["stage_id"].ToString();
@@ -98,7 +96,7 @@ public class StageLoader : MonoBehaviour
 		}
 
         mode = GameMode.STORY;
-        MoveScene("Main");
+        MoveScene("StoryDialog");
 	}
 
     public void CleanStageData()
@@ -110,10 +108,9 @@ public class StageLoader : MonoBehaviour
         cntXTopping = 0;
         goalTopping = 0;
 	}
-
-
-    public void MoveScene(string SceneName)
+    
+    public void MoveScene(string sceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        LoadingSceneManager.LoadScene(sceneName);
     }
 }

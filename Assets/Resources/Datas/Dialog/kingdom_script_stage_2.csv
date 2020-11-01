@@ -1,0 +1,22 @@
+﻿index,name,contents,background,left,right,highlight
+0,도우,나도 귀족이 되고싶어..! 스테이지2,background_village,dou_idle,,LEFT
+1,도우,그러려면 나도 비싸져야 하는데…,background_village,dou_idle,,LEFT
+2,도우,모험을 떠나 많은 경험을 하면 비싸질 수 있을지도 몰라!,background_village,dou_idle,,LEFT
+3,도우,한 번 부모님께 말씀드리고 허락을 구해 보자!,background_village,dou_idle,,LEFT
+4,,잠시 후..,background_home,,,NONE
+5,도우,다녀왔습니다!,background_home,dou_idle,mom_idle,LEFT
+6,엄마,이스트는 잘 사왔니?,background_home,dou_idle,mom_idle,RIGHT
+7,도우,네! 저 근데 하고 싶은 말이 있어요.,background_home,dou_idle,mom_idle,LEFT
+8,엄마,엄마 식사 준비 끝내고 밥 먹으면서 얘기해 줄 수 있겠니?,background_home,dou_idle,mom_idle,RIGHT
+9,도우,네! 알겠어요 엄마. (점점 떨리네..),background_home,dou_idle,mom_idle,LEFT
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
