@@ -300,6 +300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bc4a2ec2f6645e19781293b052c8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogIndex: 0
+  dialogLength: 0
+  isTyping: 0
+  originalText: 
   charName: {fileID: 1847343677}
   charContents: {fileID: 1872275541}
   background: {fileID: 953109276}
@@ -677,10 +681,10 @@ RectTransform:
   m_Father: {fileID: 1387015641}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585.75, y: 1765}
-  m_SizeDelta: {x: 515.8, y: 167.22}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -350, y: -150}
+  m_SizeDelta: {x: 515.80005, y: 167.21997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769375373
 MonoBehaviour:
