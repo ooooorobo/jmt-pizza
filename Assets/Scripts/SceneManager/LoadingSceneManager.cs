@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadingScnenManager : MonoBehaviour
+public class LoadingSceneManager : MonoBehaviour
 {
     public static string nextScene;
 

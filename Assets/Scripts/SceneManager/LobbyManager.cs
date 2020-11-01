@@ -21,6 +21,6 @@ public class LobbyManager : MonoBehaviour
 
     public void MoveScene(string sceneName)
     {
-        LoadingScnenManager.LoadScene(sceneName);
+        LoadingSceneManager.LoadScene(sceneName);
     }
 }
