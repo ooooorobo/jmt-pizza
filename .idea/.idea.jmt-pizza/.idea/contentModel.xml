@@ -38,10 +38,9 @@
           </e>
           <e p="SceneManager" t="Include">
             <e p="GameManager.cs" t="Include" />
-            <e p="LoadingScnenManager.cs" t="Include" />
-            <e p="LoadSceneManager.cs" t="Include" />
+            <e p="LoadingSceneManager.cs" t="Include" />
             <e p="LobbyManager.cs" t="Include" />
-            <e p="StageManager.cs" t="Include" />
+            <e p="StageSelectManager.cs" t="Include" />
           </e>
           <e p="StageLoader.cs" t="Include" />
           <e p="Story" t="Include">

@@ -23,8 +23,8 @@ public class DialogManager : MonoBehaviour
     public Image background;
     public Image left;
     public Image right;
-    
-    
+
+
     private void Awake()
     {
         dialogList = StageLoader.Instance().dialogList;
@@ -117,7 +117,9 @@ public class DialogManager : MonoBehaviour
 
     IEnumerator TypingTextEffect()
     {
-        Debug.Log("a");
+        Time.timeScale = 1;
+        WaitForSeconds waitDelay = new WaitForSeconds(0.03f);
+
         isTyping = true;
         
         string tempString = "";
@@ -128,7 +130,7 @@ public class DialogManager : MonoBehaviour
             tempString += originalText[charIndex++];
             charContents.text = tempString;
             
-            yield return new WaitForSeconds(0.03f);
+            yield return waitDelay;
         }
 
         isTyping = false;
