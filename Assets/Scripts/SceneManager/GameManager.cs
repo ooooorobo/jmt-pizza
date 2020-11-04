@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour
         userData = (UserData) Assets.Scripts.Data.DataManager.GetDataFromJson<UserData>("userData");
         if (userData == null) userData = new UserData();
 
-        maxScore.text = "최고 점수: " + userData.maxScore + "₩";
-        userCoin.text = "유저 코인: " + userData.coin;
+        maxScore.text = "최고 점수 " + userData.maxScore + "₩";
+        userCoin.text = userData.coin.ToString();
             
         if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
 		{
@@ -119,11 +119,11 @@ public class GameManager : MonoBehaviour
             stageMode = StageLoader.Instance().stageMode;
             goalToppingId = 0;
 
-            StageID.text = "stage id: " + stageNum;
-            TimeLimit.text = "시간 제한: " + timeLimit.ToString();
-            GoalTopping.text = "토핑 " + goalTopping.ToString() + "개 목표";
+            StageID.text = stageNum.ToString();
+            TimeLimit.text = timeLimit.ToString();
+            GoalTopping.text = "목표" + goalTopping.ToString();
             GoalToppingCNT.text = "현재 "+ goalToppingCNT + "개";
-            GoalScore.text = "목표 " + minScore.ToString() + "원";
+            GoalScore.text = "목표 " + minScore.ToString() + "₩";
             StageMode.text = StageLoader.Instance().mode.ToString();
         } else
 		{
