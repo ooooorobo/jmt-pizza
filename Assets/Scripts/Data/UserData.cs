@@ -1,4 +1,5 @@
 using System;
+using BackEnd;
 
 namespace Assets.Scripts.Data
 {
@@ -13,11 +14,18 @@ namespace Assets.Scripts.Data
         public void SaveClearData(int score)
         {
             if (this.maxScore < score)
+            {
                 this.maxScore = score;
+            }
             
             clearCount++;
 
             DataManager.SaveIntoJson(this, fileName);
+            
+            Backend.GameSchemaInfo.Insert("infiniteModeScoreTable");
+            Param newScore = new Param();
+            newScore.Add("score", score);
+            Backend.GameSchemaInfo.Insert ( "infiniteModeScoreTable", newScore );
         }
 
         public void SaveCoin(int amount)

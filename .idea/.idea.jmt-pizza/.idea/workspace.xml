@@ -23,15 +23,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ClearPanel.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/ClearPanel.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Header.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Header.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en_press.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en_press.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_kr.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en_press.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en_press.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en_press.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en_press.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_kr.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_kr.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en_press.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en_press.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr(extra-text).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr(extra-text).png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/Backend.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/Backend.aar.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Backend.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Backend.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor/TheBackendSettingEditor.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor/TheBackendSettingEditor.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/LitJson.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/LitJson.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS/TheBackend.iOS.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS/TheBackend.iOS.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources/TheBackendSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources/TheBackendSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Fire/FireIdle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Fire/FireIdle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +121,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -61,7 +139,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Tail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithDestroySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" />
@@ -86,13 +163,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingSceneManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Datas/Dialog/kingdom_script_stage_2.csv" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
       </list>
     </option>
   </component>
@@ -138,7 +217,8 @@
       <workItem from="1603893942516" duration="1873000" />
       <workItem from="1604150013555" duration="2181000" />
       <workItem from="1604219308329" duration="3595000" />
-      <workItem from="1604491000954" duration="305000" />
+      <workItem from="1604491000954" duration="505000" />
+      <workItem from="1605015108821" duration="2175000" />
     </task>
     <servers />
   </component>
@@ -180,9 +260,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1604220295342">
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1605017432134">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1604220295342" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605017432134" />
   </component>
 </project>

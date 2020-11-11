@@ -40,6 +40,7 @@
             <e p="GameManager.cs" t="Include" />
             <e p="LoadingSceneManager.cs" t="Include" />
             <e p="LobbyManager.cs" t="Include" />
+            <e p="MyPageManager.cs" t="Include" />
             <e p="StageSelectManager.cs" t="Include" />
           </e>
           <e p="StageLoader.cs" t="Include" />
