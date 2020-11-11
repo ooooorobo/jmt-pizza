@@ -36,7 +36,7 @@ public class LobbyManager : MonoBehaviour
                 for (int i = 0; i < rankRows.Count; i++)
                 {
                     Debug.Log("hi");
-                    Debug.Log(rankRows["score"]);
+                    Debug.Log(rankRows[i]["score"]["N"].ToString());
                 }
             }
             // 초기화 실패한 경우 실행

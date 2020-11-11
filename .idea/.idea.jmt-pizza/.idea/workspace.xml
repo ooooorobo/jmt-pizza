@@ -23,90 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en_press.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_en_press.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_kr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/black_kr.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bh2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-bv3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wh3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/examples/example-wv5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en_press.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_en_press.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en_press.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_en_press.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_kr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_invert_kr.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_kr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/standard_kr.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en_press.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_en_press.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr(extra-text).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr(extra-text).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Logos/white_kr.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/Backend.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/Backend.aar.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Backend.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Backend.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor/TheBackendSettingEditor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Editor/TheBackendSettingEditor.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/LitJson.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/LitJson.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS/TheBackend.iOS.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Plugins/iOS/TheBackend.iOS.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources/TheBackendSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TheBackend/Resources/TheBackendSettings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main-design.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
     </list>
@@ -169,9 +86,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
       </list>
     </option>
   </component>
@@ -218,7 +135,8 @@
       <workItem from="1604150013555" duration="2181000" />
       <workItem from="1604219308329" duration="3595000" />
       <workItem from="1604491000954" duration="505000" />
-      <workItem from="1605015108821" duration="2175000" />
+      <workItem from="1605015108821" duration="2414000" />
+      <workItem from="1605088621891" duration="451000" />
     </task>
     <servers />
   </component>

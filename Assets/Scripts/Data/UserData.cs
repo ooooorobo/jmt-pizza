@@ -16,16 +16,18 @@ namespace Assets.Scripts.Data
             if (this.maxScore < score)
             {
                 this.maxScore = score;
+    
+                Backend.GameSchemaInfo.Insert("infiniteModeScoreTable");
+                
+                Param newScore = new Param();
+                newScore.Add("score", score);
+                
+                Backend.GameSchemaInfo.Insert ( "infiniteModeScoreTable", newScore );
             }
             
             clearCount++;
 
             DataManager.SaveIntoJson(this, fileName);
-            
-            Backend.GameSchemaInfo.Insert("infiniteModeScoreTable");
-            Param newScore = new Param();
-            newScore.Add("score", score);
-            Backend.GameSchemaInfo.Insert ( "infiniteModeScoreTable", newScore );
         }
 
         public void SaveCoin(int amount)
