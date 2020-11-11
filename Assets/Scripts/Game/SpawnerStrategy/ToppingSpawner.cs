@@ -46,33 +46,32 @@ public class ToppingSpawner : DefaultSpawner
             }
         }
 
-        for (int i = 0; i < isOTopping.Length; i++)
+        // 치즈가 1번이므로 제외하고 시작
+        for (int i = 1; i < isOTopping.Length; i++)
         {
-                        
             Image nowImage = new GameObject().AddComponent<Image>();
             images.Add(nowImage);
             
             nowImage.sprite = toppingSprites[i];
             nowImage.SetNativeSize();
 
-            // X Topping
-            if (isOTopping[i])
-            {
-
-                nowImage.rectTransform.SetParent(xToppingPosition);
-                nowImage.rectTransform.position = basePosition + xToppingPosition.position + positionGap * xCount;
-                nowImage.rectTransform.localScale = localScale;
-
-                xCount++;
-            }
             // O Topping
-            else
+            if (isOTopping[i])
             {
                 nowImage.rectTransform.SetParent(oToppingPosition);
                 nowImage.rectTransform.position = basePosition + oToppingPosition.position + positionGap * oCount;
                 nowImage.rectTransform.localScale = localScale;
 
                 oCount++;
+            }
+            // X Topping
+            else
+            {
+                nowImage.rectTransform.SetParent(xToppingPosition);
+                nowImage.rectTransform.position = basePosition + xToppingPosition.position + positionGap * xCount;
+                nowImage.rectTransform.localScale = localScale;
+
+                xCount++;
             }
 
         }

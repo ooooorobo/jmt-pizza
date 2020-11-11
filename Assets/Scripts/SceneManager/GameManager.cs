@@ -261,7 +261,7 @@ public class GameManager : MonoBehaviour
         if (mode == GameMode.INFINITE)
         {
             userData.SaveClearData(score);
-            txtClearPanelBestScore.text = userData.maxScore.ToString();
+            txtClearPanelBestScore.text = userData.maxScore + "₩";
         }
         else
         {
