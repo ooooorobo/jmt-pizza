@@ -54,12 +54,15 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public Text txtScore;
-    public Text clearScoreTxt;
     public Text maxScore;
     public Text userCoin;
-    public GameObject clearPanel;
     public GameObject overPanel;
     public Image CheeseGauge;
+    
+    [Header("Clear Panel")]
+    public GameObject clearPanel;
+    public Text clearScoreTxt;
+    public Text txtClearPanelBestScore;
 
     [Header("For Mode")]
     public Text StageID;
@@ -252,12 +255,13 @@ public class GameManager : MonoBehaviour
     public void GameClear()
     {
         Stop();
-        clearScoreTxt.text = score + clearScoreTxt.text;
         clearPanel.SetActive(true);
+        clearScoreTxt.text = score + "₩";
 
         if (mode == GameMode.INFINITE)
         {
             userData.SaveClearData(score);
+            txtClearPanelBestScore.text = userData.maxScore.ToString();
         }
         else
         {
