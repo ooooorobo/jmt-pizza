@@ -13,8 +13,12 @@ public class IDefaultSpawnerStrategy : MonoBehaviour
     public Sprite[] toppingSprites;
 
     protected float spawnDelay;
-    protected Vector3 center;
     protected float tileSize;
+    protected Vector3 center;
+    protected int maxXCount;
+
+    protected RectTransform oToppingPosition;
+    protected RectTransform xToppingPosition;
 
     // 주기적으로 오브젝트를 생성하는 스포너 (Topping, Coin 등)
     public List<DefaultSpawner> periodicSpawners = new List<DefaultSpawner>();
@@ -24,19 +28,24 @@ public class IDefaultSpawnerStrategy : MonoBehaviour
     public WithRequestSpawner requestSpawner;
 
     public void InitSpawnPrefabs(GameObject topping, GameObject coin, GameObject oven, GameObject obstacle,
-        Sprite[] toppingSprites)
+        Sprite[] toppingSprites, RectTransform oToppingPosition, RectTransform xToppingPosition, int xToppingCount)
     {
         this.topping = topping;
         this.coin = coin;
         this.oven = oven;
         this.obstacle = obstacle;
         this.toppingSprites = toppingSprites;
+        this.oToppingPosition = oToppingPosition;
+        this.xToppingPosition = xToppingPosition;
+        this.maxXCount = maxXCount;
     }
-    public void InitFactory(float spawnDelay, Transform centerPosition, float tileSize)
+    
+    public void InitFactory(float spawnDelay, Transform centerPosition, float tileSize, int maxXCount)
     {
         this.spawnDelay = spawnDelay;
         this.center = centerPosition.position;
         this.tileSize = tileSize;
+        this.maxXCount = maxXCount;
     }
 
     public void AttachSpawner(GameObject obj)
@@ -52,6 +61,17 @@ public class IDefaultSpawnerStrategy : MonoBehaviour
     protected virtual void AddSpawnerComponent(GameObject obj)
     {
         
+    }
+
+    protected virtual void AddToppingSpawner(GameObject obj)
+    {
+        ToppingSpawner toppingSpawner = obj.AddComponent<ToppingSpawner>();
+        toppingSpawner.spawnObject = topping;
+        toppingSpawner.toppingSprites = toppingSprites;
+        toppingSpawner.oToppingPosition = oToppingPosition;
+        toppingSpawner.xToppingPosition = xToppingPosition;
+        toppingSpawner.maxXTopping = maxXCount;
+        periodicSpawners.Add(toppingSpawner);
     }
     
     private void InitPeriodicSpawners()

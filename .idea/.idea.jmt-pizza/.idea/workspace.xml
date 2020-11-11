@@ -24,8 +24,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/DefaultSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerV2/WithRequestSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Tail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/WithDestroySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Topping.cs" />
@@ -73,22 +77,23 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingScnenManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingSceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Datas/Dialog/kingdom_script_stage_2.csv" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
       </list>
     </option>
   </component>
@@ -136,7 +141,7 @@
       <workItem from="1604219308329" duration="3595000" />
       <workItem from="1604491000954" duration="505000" />
       <workItem from="1605015108821" duration="2414000" />
-      <workItem from="1605088621891" duration="451000" />
+      <workItem from="1605088621891" duration="3468000" />
     </task>
     <servers />
   </component>
@@ -178,9 +183,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1605017432134">
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1605092567606">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605017432134" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605092567606" />
   </component>
 </project>

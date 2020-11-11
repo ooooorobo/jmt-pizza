@@ -12,7 +12,13 @@ public class SpawnerFactory : MonoBehaviour
     public GameObject coin;
     public GameObject oven;
     public GameObject obstacle;
+    
+    [Header("Positions")]
+    public RectTransform oToppingPosition;
+    public RectTransform xToppingPosition;
 
+    public int maxXCount;
+    
     public Sprite[] toppingSprites;
     
     public IDefaultSpawnerStrategy GetSpawnerStrategyByMode(GameObject obj, StageMode stageMode)
@@ -35,7 +41,7 @@ public class SpawnerFactory : MonoBehaviour
                 break;
         }
 
-        strategy.InitSpawnPrefabs(topping, coin, oven, obstacle, toppingSprites);
+        strategy.InitSpawnPrefabs(topping, coin, oven, obstacle, toppingSprites, oToppingPosition, xToppingPosition, maxXCount);
         return strategy;
     }
 }

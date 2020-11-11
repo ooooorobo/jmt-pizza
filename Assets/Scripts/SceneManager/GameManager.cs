@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
         tileSize = tileMaker.TileSize;
         score = initialScore;
 
-        spawnerFactory.InitFactory(spawnDelay, centerPosition, tileSize);
+        spawnerFactory.InitFactory(spawnDelay, centerPosition, tileSize, cntXTopping);
         spawnerFactory.AttachSpawner(gameObject);
         
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();

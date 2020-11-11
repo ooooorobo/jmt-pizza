@@ -8560,6 +8560,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6155212226941906339, guid: b0244fc4e2f1b4e67a731f16555ae4ca,
         type: 3}
+    - target: {fileID: 1551886844181674689, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: oToppingPosition
+      value: 
+      objectReference: {fileID: 4576091479704447391}
+    - target: {fileID: 1551886844181674689, guid: bcec913a39c2347728ccd9c15b134d7c,
+        type: 3}
+      propertyPath: xToppingPosition
+      value: 
+      objectReference: {fileID: 4576091479173702326}
     - target: {fileID: 1933378469298824725, guid: bcec913a39c2347728ccd9c15b134d7c,
         type: 3}
       propertyPath: m_Name

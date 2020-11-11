@@ -6,10 +6,7 @@ public class InfiniteSpawnerStrategy : IDefaultSpawnerStrategy
 {
     protected override void AddSpawnerComponent(GameObject obj)
     {
-        ToppingSpawner toppingSpawner = obj.AddComponent<ToppingSpawner>();
-        toppingSpawner.spawnObject = topping;
-        toppingSpawner.toppingSprites = toppingSprites;
-        periodicSpawners.Add(toppingSpawner);
+        AddToppingSpawner(obj);
 
         WithDestroySpawner coinSpawner = obj.AddComponent<WithDestroySpawner>();
         coinSpawner.spawnObject = coin;
