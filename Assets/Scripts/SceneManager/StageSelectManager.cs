@@ -36,7 +36,7 @@ public class StageSelectManager : MonoBehaviour
 		    Image[] groupStars = newBtn.GetChild(2).GetComponentsInChildren<Image>();
 		    
 		    btnText.text = (i + 1).ToString();
-		    if (i < 10)
+		    if (i + 1 < 10)
 		    {
 			    btnText.text = "0" + btnText.text;
 		    }

@@ -23,8 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Story/StageButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Story/StageButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" afterDir="false" />
     </list>
@@ -138,7 +136,7 @@
       <workItem from="1604491000954" duration="505000" />
       <workItem from="1605015108821" duration="2414000" />
       <workItem from="1605088621891" duration="4336000" />
-      <workItem from="1605362545358" duration="250000" />
+      <workItem from="1605362545358" duration="458000" />
     </task>
     <servers />
   </component>
