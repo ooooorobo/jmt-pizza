@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     [Header("Spawn Topping")]
     public float spawnDelay;
     public float destroydelay;
+    public int toppingTotal = 10;
 
     [Header("Score")]
     public int oToppingScore;
@@ -45,6 +47,9 @@ public class GameManager : MonoBehaviour
     private int score;
     private int cheese;
     private bool ovenOpened = false;
+    public int[] toppingCounts;
+    public Color oToppingScoreColor;
+    public Color xToppingScoreColor;
 
     [Header("Arrow")]
     public Button up;
@@ -58,6 +63,7 @@ public class GameManager : MonoBehaviour
     public Text userCoin;
     public GameObject overPanel;
     public Image CheeseGauge;
+    public GameObject resultList;
     
     [Header("Clear Panel")]
     public GameObject clearPanel;
@@ -80,6 +86,7 @@ public class GameManager : MonoBehaviour
     private int obstacleCount = 0;
 
     [Header("Data")] private UserData userData;
+    public string[] toppingNameList;
 
     private GameMode mode = GameMode.INFINITE;
     private StageMode stageMode = global::StageMode.NONE;
@@ -140,6 +147,7 @@ public class GameManager : MonoBehaviour
         }
 
         spawnerFactory = GetComponent<SpawnerFactory>().GetSpawnerStrategyByMode(gameObject, stageMode);
+        toppingCounts = new int[toppingTotal];
 
         InitGame();
     }
@@ -168,8 +176,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(Topping t )
     {
-        score += t.isO ? oToppingScore : xToppingScore;
-
+        toppingCounts[t.id]++;
+        
         if (t.isO)
 		{
             score += oToppingScore;
@@ -257,6 +265,30 @@ public class GameManager : MonoBehaviour
         Stop();
         clearPanel.SetActive(true);
         clearScoreTxt.text = score + "₩";
+        
+        // TODO:: Topping sprite, name 관리하는 무언가.. 만들기
+        Sprite[] sprites = spawnerFactory.toppingSprites;
+
+        for (int i = 0; i < resultList.transform.childCount; i++)
+        {
+            Transform child = resultList.transform.GetChild(i);
+
+            child.GetChild(0).GetComponent<Image>().sprite = sprites[i];
+            child.GetChild(1).GetComponent<Text>().text = toppingNameList[i];
+            child.GetChild(2).GetComponent<Text>().text = toppingCounts[i] + "개";
+            
+            // TODO:: 스태틱 사용하지 않기
+            if (ToppingSpawner.isOTopping[i])
+            {
+                Text toppingScoreText = child.GetChild(3).GetComponent<Text>();
+                toppingScoreText.text = "+" + toppingCounts[i] * oToppingScore + "₩";
+                toppingScoreText.color = oToppingScoreColor;
+            } else {
+                Text toppingScoreText = child.GetChild(3).GetComponent<Text>();
+                toppingScoreText.text = toppingCounts[i] * xToppingScore + "₩";
+                toppingScoreText.color = xToppingScoreColor;
+            }
+        }
 
         if (mode == GameMode.INFINITE)
         {

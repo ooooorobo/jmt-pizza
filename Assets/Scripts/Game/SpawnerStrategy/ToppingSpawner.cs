@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ToppingSpawner : DefaultSpawner
 {
     public Sprite[] toppingSprites;
-    private bool[] isOTopping;
+    public static bool[] isOTopping;
     public int maxXTopping;
     
     public RectTransform oToppingPosition;

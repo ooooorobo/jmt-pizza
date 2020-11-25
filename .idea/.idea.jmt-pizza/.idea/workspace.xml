@@ -23,8 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StageSelect.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Fire/Fire_Sheet_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Fire/Fire_Sheet_0.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +86,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" />
       </list>
     </option>
   </component>
@@ -136,7 +138,9 @@
       <workItem from="1604491000954" duration="505000" />
       <workItem from="1605015108821" duration="2414000" />
       <workItem from="1605088621891" duration="4336000" />
-      <workItem from="1605362545358" duration="458000" />
+      <workItem from="1605362545358" duration="662000" />
+      <workItem from="1605622966601" duration="2185000" />
+      <workItem from="1606291257859" duration="1151000" />
     </task>
     <servers />
   </component>
@@ -170,6 +174,10 @@
     </state>
     <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1604151949847" />
     <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog/0.23.1440.822@0.23.1440.822" timestamp="1600590213476" />
+    <state x="495" y="126" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605624130092">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="495" y="126" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1605624130092" />
     <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -178,9 +186,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup" timestamp="1605092567606">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup" timestamp="1606291598857">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605092567606" />
+    <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605623087080" />
+    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1606291598857" />
   </component>
 </project>
