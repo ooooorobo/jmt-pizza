@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
     public GameObject overPanel;
     public Image CheeseGauge;
     public GameObject resultList;
+
+    [Header("Over Panel")] 
+    public Text overBestScore;
+    public Text overTotalScore;
+    public Text overReason;
     
     [Header("Clear Panel")]
     public GameObject clearPanel;
@@ -256,7 +261,12 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Stop();
-
+        
+        overBestScore.text = userData.maxScore + "₩";
+        overTotalScore.text = score + "₩";
+        
+        overReason.text = score < 1 ? "맛없는 피자가 되었어요 ㅠㅠ" : "따라오던 토핑과 부딪혔어요 ㅠㅠ";
+        
         overPanel.SetActive(true);
     }
 
