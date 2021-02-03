@@ -7,6 +7,13 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Common" t="Include">
+            <e p="MyStageManager.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
+          </e>
+          <e p="Constant" t="Include">
+            <e p="Environment.cs" t="Include" />
+          </e>
           <e p="CSVReader.cs" t="Include" />
           <e p="Data" t="Include">
             <e p="DataManager.cs" t="Include" />
@@ -14,8 +21,11 @@
             <e p="StageData.cs" t="Include" />
             <e p="UserData.cs" t="Include" />
           </e>
-          <e p="DataManager.cs" t="Include" />
           <e p="Game" t="Include">
+            <e p="GameManagerStrategy" t="Include">
+              <e p="IGameManager.cs" t="Include" />
+              <e p="InfiniteGameManager.cs" t="Include" />
+            </e>
             <e p="IDestroy.cs" t="Include" />
             <e p="JoystickController.cs" t="Include" />
             <e p="Player.cs" t="Include" />
@@ -36,6 +46,7 @@
             <e p="TileMaker.cs" t="Include" />
             <e p="Topping.cs" t="Include" />
           </e>
+          <e p="RankManager.cs" t="Include" />
           <e p="SceneManager" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="LoadingSceneManager.cs" t="Include" />

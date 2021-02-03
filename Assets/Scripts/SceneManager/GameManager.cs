@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,8 +23,6 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     [Header("Board")]
-    public int column;
-    public int row;
     public Transform centerPosition;
 
     [Header("Player")]
@@ -34,16 +31,9 @@ public class GameManager : MonoBehaviour
     public float accelerate;
 
     [Header("Spawn Topping")]
-    public float spawnDelay;
-    public float destroydelay;
     public int toppingTotal = 10;
 
     [Header("Score")]
-    public int oToppingScore;
-    public int xToppingScore;
-    public int initialScore;
-    public int cntXTopping;
-    public int cheeseGoal;
     private int score;
     private int cheese;
     private bool ovenOpened = false;
@@ -93,8 +83,8 @@ public class GameManager : MonoBehaviour
     [Header("Data")] private UserData userData;
     public string[] toppingNameList;
 
-    private GameMode mode = GameMode.INFINITE;
-    private StageMode stageMode = global::StageMode.NONE;
+    private Environment.GameMode mode = Environment.GameMode.INFINITE;
+    private Environment.StageMode stageMode = Environment.StageMode.ORIGINAL;
 
     IEnumerator addGaugeCoroutine;
 
@@ -122,13 +112,13 @@ public class GameManager : MonoBehaviour
         maxScore.text = "최고 점수 " + userData.maxScore + "₩";
         userCoin.text = userData.coin.ToString();
             
-        if (StageLoader.Instance() != null && StageLoader.Instance().mode != GameMode.INFINITE)
+        if (StageLoader.Instance() != null && StageLoader.Instance().mode != Environment.GameMode.INFINITE)
 		{
             stageNum = Convert.ToInt32(StageLoader.Instance().stageId);
             timeLimit = StageLoader.Instance().timeLimit;
             goalTopping = StageLoader.Instance().goalTopping;
             minScore = StageLoader.Instance().minScore;
-            cntXTopping = StageLoader.Instance().cntXTopping;
+            // cntXTopping = StageLoader.Instance().cntXTopping;
             obstacleCount = StageLoader.Instance().obstacleCount;
             mode = StageLoader.Instance().mode;
             stageMode = StageLoader.Instance().stageMode;
@@ -148,7 +138,7 @@ public class GameManager : MonoBehaviour
             GoalScore.gameObject.SetActive(false);
             StageMode.gameObject.SetActive(false);
             GoalToppingCNT.gameObject.SetActive(false);
-            stageMode = global::StageMode.NONE;
+            stageMode = Environment.StageMode.ORIGINAL;
         }
 
         spawnerFactory = GetComponent<SpawnerFactory>().GetSpawnerStrategyByMode(gameObject, stageMode);
@@ -160,12 +150,12 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         tileMaker = GetComponent<TileMaker>();
-        tileMaker.MakeBoard(row, column, centerPosition.position);
+        tileMaker.MakeBoard(Environment.BoardRowCount, Environment.BoardColumnCount, centerPosition.position);
 
         tileSize = tileMaker.TileSize;
-        score = initialScore;
+        score = Environment.InfiniteInitialScore;
 
-        spawnerFactory.InitFactory(spawnDelay, centerPosition, tileSize, cntXTopping);
+        spawnerFactory.InitFactory(Environment.InfiniteToppingSpawnDelay, centerPosition, tileSize, Environment.InfiniteXToppingCount);
         spawnerFactory.AttachSpawner(gameObject);
         
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
@@ -185,22 +175,22 @@ public class GameManager : MonoBehaviour
         
         if (t.isO)
 		{
-            score += oToppingScore;
+            score += Environment.InfiniteOToppingScore;
             player.GetComponent<Animator>().SetTrigger("Happy");
 		}
         else
 		{
-            score += xToppingScore;
+            score += Environment.InfiniteXToppingScore;
             player.GetComponent<Animator>().SetTrigger("Sad");
         }
 
-        if (mode == GameMode.INFINITE && t.isCheese) {
+        if (mode == Environment.GameMode.INFINITE && t.isCheese) {
             cheese++;
             
             if (addGaugeCoroutine != null)
                 StopCoroutine(addGaugeCoroutine);
             
-            addGaugeCoroutine = AddGauge((float)cheese / cheeseGoal);
+            addGaugeCoroutine = UIManager.FillAmount(CheeseGauge, (float)cheese / Environment.InfiniteTargetToppingGoalMin, 0.0035f);
             StartCoroutine(addGaugeCoroutine);
         }
         if (t.id == goalToppingId)
@@ -245,7 +235,7 @@ public class GameManager : MonoBehaviour
 		{
             spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
 		}
-        else if (mode == GameMode.INFINITE && cheese >= cheeseGoal && !ovenOpened)
+        else if (mode == Environment.GameMode.INFINITE && cheese >= Environment.InfiniteTargetToppingGoalMin && !ovenOpened)
         {
             ovenOpened = true;
             spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
@@ -291,16 +281,16 @@ public class GameManager : MonoBehaviour
             if (ToppingSpawner.isOTopping[i])
             {
                 Text toppingScoreText = child.GetChild(3).GetComponent<Text>();
-                toppingScoreText.text = "+" + toppingCounts[i] * oToppingScore + "₩";
+                toppingScoreText.text = "+" + toppingCounts[i] * Environment.InfiniteOToppingScore + "₩";
                 toppingScoreText.color = oToppingScoreColor;
             } else {
                 Text toppingScoreText = child.GetChild(3).GetComponent<Text>();
-                toppingScoreText.text = toppingCounts[i] * xToppingScore + "₩";
+                toppingScoreText.text = toppingCounts[i] * Environment.InfiniteXToppingScore + "₩";
                 toppingScoreText.color = xToppingScoreColor;
             }
         }
 
-        if (mode == GameMode.INFINITE)
+        if (mode == Environment.GameMode.INFINITE)
         {
             userData.SaveClearData(score);
             txtClearPanelBestScore.text = userData.maxScore + "₩";
@@ -310,26 +300,4 @@ public class GameManager : MonoBehaviour
             StoryData.SaveStageData(stageNum, score);
         }
     }
-
-    public void Restart() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void GoMain()
-    {
-        SceneManager.LoadScene(mode == GameMode.INFINITE ? "Lobby" : "StageSelect");
-    }
-
-    IEnumerator AddGauge (float maximum)
-	{
-        while (CheeseGauge.fillAmount < maximum)
-		{
-            CheeseGauge.fillAmount += 0.0035f;
-
-            yield return null;
-		}
-	}
-    
-    
 }

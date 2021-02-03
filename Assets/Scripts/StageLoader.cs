@@ -1,22 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameMode
-{
-    LOBY,
-    INFINITE,
-    STORY,
-    MULTI
-}
-
-public enum StageMode
-{
-    NONE,
-    ORIGINAL,
-    AVOID,
-    CLEAN_DUST
-}
-
 public class StageLoader : MonoBehaviour
 {
     private static StageLoader instance;
@@ -32,12 +16,12 @@ public class StageLoader : MonoBehaviour
     public List<Dictionary<string, object>> dialogList;
     private List<Dictionary<string, object>> stageDataList;
 
-    public GameMode mode = GameMode.LOBY;
+    public Environment.GameMode mode = Environment.GameMode.LOBBY;
 
     // stage_id,mode_id,time_limit,min_score,cnt_x_topping,goal_topping
     /* Stage Data */
     public string stageId;
-    public StageMode stageMode;
+    public Environment.StageMode stageMode;
     public int timeLimit;
     public int minScore;
     public int cntXTopping;
@@ -79,30 +63,30 @@ public class StageLoader : MonoBehaviour
         switch (stageData["mode_id"])
 		{
             case "original":
-                stageMode = StageMode.ORIGINAL;
+                stageMode = Environment.StageMode.ORIGINAL;
                 break;
             case "avoid":
-                stageMode = StageMode.AVOID;
+                stageMode = Environment.StageMode.AVOID;
                 break;
             case "clean_dust":
-                stageMode = StageMode.CLEAN_DUST;
+                stageMode = Environment.StageMode.CLEAN_DUST;
                 break;
             case "clean_scorch":
-                stageMode = StageMode.CLEAN_DUST;
+                stageMode = Environment.StageMode.CLEAN_DUST;
                 break;
             default:
-                stageMode = StageMode.ORIGINAL;
+                stageMode = Environment.StageMode.ORIGINAL;
                 break;
 		}
 
-        mode = GameMode.STORY;
+        mode = Environment.GameMode.STORY;
         MoveScene("StoryDialog");
 	}
 
     public void CleanStageData()
 	{
         stageId = "";
-        stageMode = StageMode.NONE;
+        stageMode = Environment.StageMode.ORIGINAL;
         timeLimit = 0;
         minScore = 0;
         cntXTopping = 0;

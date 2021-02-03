@@ -8,6 +8,8 @@ public class ToppingSpawner : DefaultSpawner
     public Sprite[] toppingSprites;
     public static bool[] isOTopping;
     public int maxXTopping;
+
+    public int targetToppingId = Environment.InfiniteTargetToppingId;
     
     public RectTransform oToppingPosition;
     public RectTransform xToppingPosition;
@@ -82,10 +84,12 @@ public class ToppingSpawner : DefaultSpawner
     {
         int index = Random.Range(0, toppingSprites.Length);
         obj.GetComponent<SpriteRenderer>().sprite = toppingSprites[index];
+        
         Topping top = obj.GetComponent<Topping>();
         top.isO = isOTopping[index];
         top.id = index;
-        top.isCheese = index == 0;
-        top.SetDelay(5f);
+        top.isCheese = index == targetToppingId;
+        
+        top.SetDelay(Environment.InfiniteToppingDestroyDelay);
     }
 }

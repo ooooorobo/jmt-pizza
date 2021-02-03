@@ -21,19 +21,19 @@ public class SpawnerFactory : MonoBehaviour
     
     public Sprite[] toppingSprites;
     
-    public IDefaultSpawnerStrategy GetSpawnerStrategyByMode(GameObject obj, StageMode stageMode)
+    public IDefaultSpawnerStrategy GetSpawnerStrategyByMode(GameObject obj, Environment.StageMode stageMode)
     {
         IDefaultSpawnerStrategy strategy;
         
         switch (stageMode)
         {
-            case StageMode.ORIGINAL:
+            case Environment.StageMode.ORIGINAL:
                 strategy = gameObject.AddComponent<InfiniteSpawnerStrategy>();
                 break;
-            case StageMode.AVOID:
+            case Environment.StageMode.AVOID:
                 strategy = gameObject.AddComponent<AvoidSpawnerStrategy>();
                 break;
-            case StageMode.CLEAN_DUST:
+            case Environment.StageMode.CLEAN_DUST:
                 strategy = gameObject.AddComponent<CleanSpawnerStrategy>();
                 break;
             default:

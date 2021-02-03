@@ -14,7 +14,7 @@ public class TileMaker : MonoBehaviour
     public Color[] tileColors;
 
 
-    public void MakeBoard(int column, int row, Vector3 center)
+    public void MakeBoard(int row, int column, Vector3 center)
     {
         this.row = row;
         this.column = column;

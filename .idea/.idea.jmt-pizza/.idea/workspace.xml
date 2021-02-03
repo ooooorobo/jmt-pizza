@@ -23,7 +23,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b85de985-e06b-44f3-aeb1-37862002381a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MyPage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MyPage/RankMine.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MyPage/RankMine.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MyPage/RankOthers.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/MyPage/RankOthers.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/MyStageManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/MyStageManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UIManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UIManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Constant/Environment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/IGameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/IGameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/InfiniteGameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/InfiniteGameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RankManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RankManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.jmt-pizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MyPage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MyPage.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/TileMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/TileMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/IData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Datas/stage1.csv" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataManager.cs" />
@@ -61,9 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/SceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadSceneManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/TileMaker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/DefaultSpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerFactory.cs" />
@@ -74,19 +105,30 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LoadingSceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Datas/Dialog/kingdom_script_stage_2.csv" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Story/DialogManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/InfiniteSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/AvoidSpawnerStrategy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/CleanSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/StageSelectManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/IDefaultSpawnerStrategy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/MyPageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Data/UserData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/LobbyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RankManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/StageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/MyStageManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StageLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/StageStrategy/SpawnerFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/DefaultGameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/IGameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/TileMaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/DefaultSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SpawnerStrategy/ToppingSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManagerStrategy/InfiniteGameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Constant/Environment.cs" />
       </list>
     </option>
   </component>
@@ -137,7 +179,10 @@
       <workItem from="1605088621891" duration="4336000" />
       <workItem from="1605362545358" duration="662000" />
       <workItem from="1605622966601" duration="2185000" />
-      <workItem from="1606291257859" duration="2787000" />
+      <workItem from="1606291257859" duration="2936000" />
+      <workItem from="1611735950610" duration="7835000" />
+      <workItem from="1612167186394" duration="7369000" />
+      <workItem from="1612322734555" duration="702000" />
     </task>
     <servers />
   </component>
@@ -161,32 +206,29 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="221" y="89" key="SettingsEditor" timestamp="1600586380645">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="532" y="170" key="RiderGenerateDialog" timestamp="1612177691134">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600586380645" />
-    <state x="221" y="104" key="SettingsEditor/0.23.1440.822@0.23.1440.822" timestamp="1600580150246" />
-    <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog" timestamp="1604151949847">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="532" y="170" key="RiderGenerateDialog/0.23.1440.877@0.23.1440.877" timestamp="1612177691134" />
+    <state width="498" height="445" key="SwitcherDM" timestamp="1612322830397">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="498" height="445" key="SwitcherDM/-1112.-24.1112.811/0.23.1440.877@0.23.1440.877" timestamp="1611747068721" />
+    <state width="498" height="445" key="SwitcherDM/0.23.1440.877@0.23.1440.877" timestamp="1612322830397" />
+    <state x="100" y="105" width="1240" height="748" key="VCS.FileHistoryDialog" timestamp="1612174480485">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="100" y="84" width="1240" height="767" key="VCS.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1604151949847" />
-    <state x="100" y="100" width="1240" height="700" key="VCS.FileHistoryDialog/0.23.1440.822@0.23.1440.822" timestamp="1600590213476" />
+    <state x="100" y="105" width="1240" height="748" key="VCS.FileHistoryDialog/0.23.1440.877@0.23.1440.877" timestamp="1612174480485" />
     <state x="495" y="126" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605624130092">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="495" y="126" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1605624130092" />
-    <state x="362" y="61" width="537" height="822" key="dock-window-1" timestamp="1600181917072">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="362" y="61" width="537" height="822" key="dock-window-1/0.0.1440.900@0.0.1440.900" timestamp="1600181917072" />
-    <state x="0" y="39" width="694" height="822" key="find.popup" timestamp="1600591483088">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="0" y="39" width="694" height="822" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1600591483088" />
-    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup" timestamp="1606294405393">
+    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup" timestamp="1612323060527">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup/-1112.-24.1112.811/0.23.1440.877@0.23.1440.877" timestamp="1611747365763" />
     <state x="383" y="194" width="672" height="678" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605623087080" />
-    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1606294405393" />
+    <state x="383" y="212" width="672" height="661" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1612323060527" />
   </component>
 </project>

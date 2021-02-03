@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Tail
@@ -39,11 +38,11 @@ public class Player : Tail
         this.accel = accel;
         this.center = center;
 
-        int row = GameManager.Instance().row;
-        int column = GameManager.Instance().column;
+        int row = Environment.BoardRowCount;
+        int column = Environment.BoardColumnCount;
 
-        xLen = center.x + (row / 2) * distance + (distance / 2) * (row % 2 - 1);
-        yLen = (column / 2) * distance + (distance / 2) * (column % 2 - 1);
+        xLen = center.x + (column / 2) * distance + (distance / 2) * (column % 2 - 1);
+        yLen = (row / 2) * distance + (distance / 2) * (row % 2 - 1);
     }
 
     public void SetDirection(string dir) {
@@ -119,7 +118,7 @@ public class Player : Tail
 
         yield return new WaitForSeconds(speed * 3);
 
-        GameManager.Instance().GameClear();
+        InfiniteGameManager.Instance().GameClear();
     }
 
     IEnumerator MoveCoroutine()
@@ -153,7 +152,7 @@ public class Player : Tail
         switch (col.tag)
         {
             case "Topping":
-                GameManager.Instance().ChangeScore(col.GetComponent<Topping>());
+                InfiniteGameManager.Instance().GetTopping(col.GetComponent<Topping>());
                 col.gameObject.SetActive(false);
 
                 Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
@@ -171,7 +170,7 @@ public class Player : Tail
                 break;
 
             case "Tail":
-                GameManager.Instance().GameOver();
+                InfiniteGameManager.Instance().GameOver();
 
                 break;
 
@@ -179,10 +178,10 @@ public class Player : Tail
                 StartCoroutine("EnterOven");
                 break;
             case "Obstacle":
-                GameManager.Instance().GameOver();
+                InfiniteGameManager.Instance().GameOver();
                 break;
             case "Coin":
-                GameManager.Instance().GetCoin();
+                InfiniteGameManager.Instance().GetCoin(200);
                 col.gameObject.SetActive(false);
                 break;
         }

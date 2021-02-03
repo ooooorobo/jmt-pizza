@@ -13,16 +13,14 @@ namespace Assets.Scripts.Data
         
         public void SaveClearData(int score)
         {
-            if (this.maxScore < score)
+            if (this.maxScore > score && score > 0)
             {
                 this.maxScore = score;
-    
-                Backend.GameSchemaInfo.Insert("infiniteModeScoreTable");
                 
                 Param newScore = new Param();
                 newScore.Add("score", score);
                 
-                Backend.GameSchemaInfo.Insert ( "infiniteModeScoreTable", newScore );
+                Backend.GameSchemaInfo.Insert ( Environment.InfiniteTableName, newScore );
             }
             
             clearCount++;

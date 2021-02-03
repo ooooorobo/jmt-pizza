@@ -41,8 +41,8 @@ public class DefaultSpawner : MonoBehaviour
     
     public void InitValue(float spawnDelay, Vector3 center, float tileSize)
     {
-        this.row = GameManager.Instance().row;
-        this.column = GameManager.Instance().column;
+        this.row = Environment.BoardRowCount;
+        this.column = Environment.BoardColumnCount;
         this.tileSize = tileSize;
         this.center = center;
 
@@ -91,11 +91,11 @@ public class DefaultSpawner : MonoBehaviour
     {
         if (count > 10) return new Vector3(-200, -200, 0);
 
-        float x = center.x + Random.Range(0, row) * tileSize;
-        float y = center.y + Random.Range(0, column) * tileSize * -1;
+        float x = center.x + Random.Range(0, column) * tileSize;
+        float y = center.y + Random.Range(0, row) * tileSize * -1;
 
-        y += (column / 2) * tileSize + (tileSize / 2) * (column % 2 - 1);
-        x -= ((row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1));
+        y += (row / 2) * tileSize + (tileSize / 2) * (row % 2 - 1);
+        x -= ((column / 2) * tileSize + (tileSize / 2) * (column % 2 - 1));
 
         Vector3 pos = new Vector3(x, y, 0);
 

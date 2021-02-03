@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +12,10 @@ public class LobbyManager : MonoBehaviour
     public Text userCoin;
     
     private UserData userData;
+
+    public GameObject panUpdateNickname;
+    public Text txtUpdateNicknameErr;
+    public InputField txtUpdateNicknameInput;
     
 // example
     void Start()
@@ -29,15 +32,16 @@ public class LobbyManager : MonoBehaviour
                 Debug.Log("뒤끝 서버 초기화 완료");
                 Backend.BMember.GuestLogin();
                 
-                BackendReturnObject rankList = Backend.Rank.GetRankByUuid("b0a52b30-235c-11eb-87fa-6f54f412f5f8");
-                BackendReturnObject myRank = Backend.Rank.GetMyRank("b0a52b30-235c-11eb-87fa-6f54f412f5f8");
-
-                JsonData rankRows = rankList.GetReturnValuetoJSON()["rows"];
-                for (int i = 0; i < rankRows.Count; i++)
+                Backend.BMember.GetUserInfo( ( callback ) =>
                 {
-                    Debug.Log("hi");
-                    Debug.Log(rankRows[i]["score"]["N"].ToString());
-                }
+                    Debug.Log(callback.GetReturnValuetoJSON()["row"]["nickname"]);
+                    if (callback.GetReturnValuetoJSON()["row"]["nickname"] == null)
+                    {
+                        panUpdateNickname.SetActive(true);
+                    }
+                });
+                
+                panUpdateNickname.SetActive(false);
             }
             // 초기화 실패한 경우 실행
             else
@@ -50,6 +54,21 @@ public class LobbyManager : MonoBehaviour
             (UserData) Assets.Scripts.Data.DataManager.GetDataFromJson<UserData>("userData") 
             ?? new UserData();
         userCoin.text = userData.coin.ToString();
+    }
+
+    public void OnClickUpdateNickname()
+    {
+        Backend.BMember.CreateNickname( txtUpdateNicknameInput.text, ( callback ) =>
+        {
+            if (callback.IsSuccess())
+            {
+                panUpdateNickname.SetActive(false);
+            }
+            else
+            {
+                txtUpdateNicknameErr.text = callback.GetMessage();
+            }
+        });
     }
 
     public void MoveScene(string sceneName)
