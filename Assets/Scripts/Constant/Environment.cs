@@ -39,7 +39,7 @@ public class Environment
     public const int InfiniteXToppingScore = -200;
 
     // X 토핑 총 개수
-    public const int InfiniteXToppingCount = 8;
+    public const int InfiniteXToppingCount = 4;
     
     // 토핑 스폰 딜레이 (하나의 토핑이 생성된 후, n초 뒤에 다음 토핑 생성)
     public const float InfiniteToppingSpawnDelay = 2f;
