@@ -135,13 +135,14 @@ public class InfiniteGameManager: MonoBehaviour, IGameManager
             goalToppingCount++;
         }
 
+        CheckGameClear();
     }
 
     public void ChangeScore(int change)
     {
         score += change;
         txtScore.text = score + "￦";
-
+        
         if (score < Environment.InfiniteScoreMinimum)
         {
             GameOver();
