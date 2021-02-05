@@ -29,8 +29,8 @@ public class Environment
     // 플레이어 최초 시작 속도 - 한 칸 움직이는 데 걸리는 시간(초) 
     public const float InfinitePlayerInitialSpeed = 0.2f;
     
-    // 토핑 하나를 먹을 때마다, 플레이어 속도가 빨라지는 정도 - 원래 속도에서 단순 빼기 연산
-    public const float InfinitePlayerAccelerateSpeed = 0.02f;
+    // 토핑 하나를 먹을 때마다, 플레이어 속도가 빨라지는 정도 - 원래 속도에서 곱연산
+    public const float InfinitePlayerAccelerateSpeed = 0.98f;
 
     // O 토핑 획득 시 점수 변화량
     public const int InfiniteOToppingScore = 400;

@@ -165,7 +165,7 @@ public class Player : Tail
 
                 tailCount++;
 
-                speed -= accel;
+                speed *= accel;
 
                 break;
 
