@@ -1,3 +1,4 @@
+using LitJson;
 using UnityEngine;
 
 public class Environment
@@ -22,7 +23,7 @@ public class Environment
     public const int InfiniteTargetToppingId = 0;
     
     // 타겟 토핑(치즈)의 클리어 최소 조건
-    public const int InfiniteTargetToppingGoalMin = 4;
+    public const int InfiniteTargetToppingGoalMin = 1;
 
     public const int InfiniteToppingTotalCount = 10;
 

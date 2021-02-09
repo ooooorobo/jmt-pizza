@@ -12,4 +12,14 @@ public class MyStageManager: MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    
+    public static void RestartWithStatic() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void LoadSceneWithStatic(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
