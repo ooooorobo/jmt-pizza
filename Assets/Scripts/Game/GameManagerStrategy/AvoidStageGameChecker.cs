@@ -21,6 +21,10 @@ public class AvoidStageGameChecker: GameChecker
         spawnerFactory.RequestSpawn(RequestEnum.OBSTACLE, stageLoader.obstacleCount);
         
         gameManager.spawnerFactory = spawnerFactory;
+        
+        gameManager.txtScoreInfo.text = "목표 점수 " + stageLoader.minScore + "₩";
+
+        ChangeGauge(null);
     }
 
     public override void CheckGameClear()
@@ -44,10 +48,20 @@ public class AvoidStageGameChecker: GameChecker
     {
         clearPanel.gameObject.SetActive(true);
 
-        Button restartBtn = clearPanel.GetChild(3).GetComponent<Button>();
-        Button mainBtn = clearPanel.GetChild(4).GetComponent<Button>();
+        Button mainBtn = clearPanel.GetChild(3).GetComponent<Button>();
+        Button restartBtn = clearPanel.GetChild(4).GetComponent<Button>();
 
-        restartBtn.onClick.AddListener(() => MyStageManager.RestartWithStatic());
         mainBtn.onClick.AddListener(() => MyStageManager.LoadSceneWithStatic("StageSelect"));
+        restartBtn.onClick.AddListener(() => MyStageManager.RestartWithStatic());
+    }
+    
+    public override void ChangeGauge(Topping t)
+    {
+        if (gameManager.addGaugeCoroutine != null)
+            StopCoroutine(gameManager.addGaugeCoroutine);
+
+        gameManager.addGaugeCoroutine = UIManager.FillAmount(gameManager.CheeseGauge,
+            (float) gameManager.score / stageLoader.minScore, 0.0035f);
+        StartCoroutine(gameManager.addGaugeCoroutine);
     }
 }

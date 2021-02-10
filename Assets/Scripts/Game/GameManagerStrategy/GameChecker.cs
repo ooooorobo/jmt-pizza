@@ -18,4 +18,5 @@ public abstract class GameChecker: MonoBehaviour
     public abstract void CheckGameClear();
     public abstract void CheckGameOver();
     public abstract void SetGameClearPanelUi();
+    public abstract void ChangeGauge(Topping t);
 }

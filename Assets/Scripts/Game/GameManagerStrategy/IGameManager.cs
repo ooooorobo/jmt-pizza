@@ -33,6 +33,7 @@ public class IGameManager : MonoBehaviour
 
     [Header("UI")] 
     public Text txtScore;
+    public Text txtScoreInfo;
     public Text userCoin;
     public Image CheeseGauge;
     public Transform canvas;
@@ -44,9 +45,8 @@ public class IGameManager : MonoBehaviour
 
     [Header("Data")] 
     public UserData userData;
-
-
-    private IEnumerator addGaugeCoroutine;
+    
+    public IEnumerator addGaugeCoroutine;
 
     private static IGameManager instance;
 
@@ -73,6 +73,7 @@ public class IGameManager : MonoBehaviour
     {
         userData = (UserData) DataManager.GetDataFromJson<UserData>("userData");
         if (userData == null) userData = new UserData();
+        userCoin.text = userData.coin.ToString();
 
         StageLoader stageLoader = StageLoader.Instance();
         Environment.GameMode gameMode = stageLoader ? stageLoader.mode : Environment.GameMode.INFINITE;
@@ -119,17 +120,8 @@ public class IGameManager : MonoBehaviour
             player.GetComponent<Animator>().SetTrigger("Sad");
         }
 
-        if (t.isCheese)
-        {
-            cheese++;
+        gameChecker.ChangeGauge(t);
 
-            if (addGaugeCoroutine != null)
-                StopCoroutine(addGaugeCoroutine);
-
-            addGaugeCoroutine = UIManager.FillAmount(CheeseGauge,
-                (float) cheese / Environment.InfiniteTargetToppingGoalMin, 0.0035f);
-            StartCoroutine(addGaugeCoroutine);
-        }
 
         if (t.id == Environment.InfiniteTargetToppingId)
         {
@@ -153,8 +145,8 @@ public class IGameManager : MonoBehaviour
 // 코인 획득 시 - 플레이어 코인 변경
     public void GetCoin(int coin)
     {
-        userData.SaveCoin(200);
-        userCoin.text = "유저 코인: " + userData.coin;
+        userData.SaveCoin(coin);
+        userCoin.text = userData.coin.ToString();
     }
     
     // 게임 일시정지 시

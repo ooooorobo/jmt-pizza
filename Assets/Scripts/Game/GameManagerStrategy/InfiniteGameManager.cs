@@ -19,6 +19,7 @@ public class InfiniteGameManager: GameChecker
 
         gameManager.spawnerFactory = spawnerFactory;
 
+        gameManager.txtScoreInfo.text = "최고 점수 " + gameManager.userData.maxScore + "₩";
     }
 
     public override void CheckGameOver()
@@ -82,5 +83,20 @@ public class InfiniteGameManager: GameChecker
 
         bestScoreTxt.text = gameManager.userData.maxScore + "₩";
 
+    }
+
+    public override void ChangeGauge(Topping t)
+    {
+        if (t.isCheese)
+        {
+            gameManager.cheese++;
+
+            if (gameManager.addGaugeCoroutine != null)
+                StopCoroutine(gameManager.addGaugeCoroutine);
+
+            gameManager.addGaugeCoroutine = UIManager.FillAmount(gameManager.CheeseGauge,
+                (float) gameManager.cheese / Environment.InfiniteTargetToppingGoalMin, 0.0035f);
+            StartCoroutine(gameManager.addGaugeCoroutine);
+        }
     }
 }
