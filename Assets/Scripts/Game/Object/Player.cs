@@ -88,7 +88,7 @@ public class Player : Tail
         StopCoroutine(move);
     }
 
-    public void StratMove()
+    public void StartMove()
     {
         isMoving = true;
         StartCoroutine(move);
@@ -118,7 +118,7 @@ public class Player : Tail
 
         yield return new WaitForSeconds(speed * 3);
 
-        InfiniteGameManager.Instance().GameClear();
+        IGameManager.Instance().GameClear();
     }
 
     IEnumerator MoveCoroutine()
@@ -152,7 +152,7 @@ public class Player : Tail
         switch (col.tag)
         {
             case "Topping":
-                InfiniteGameManager.Instance().GetTopping(col.GetComponent<Topping>());
+                IGameManager.Instance().GetTopping(col.GetComponent<Topping>());
                 col.gameObject.SetActive(false);
 
                 Tail newtail = Instantiate(Tail, prevPos, Quaternion.identity).GetComponent<Tail>();
@@ -170,7 +170,7 @@ public class Player : Tail
                 break;
 
             case "Tail":
-                InfiniteGameManager.Instance().GameOver();
+                IGameManager.Instance().GameOver();
 
                 break;
 
@@ -178,10 +178,10 @@ public class Player : Tail
                 StartCoroutine("EnterOven");
                 break;
             case "Obstacle":
-                InfiniteGameManager.Instance().GameOver();
+                IGameManager.Instance().GameOver();
                 break;
             case "Coin":
-                InfiniteGameManager.Instance().GetCoin(200);
+                IGameManager.Instance().GetCoin(200);
                 col.gameObject.SetActive(false);
                 break;
         }

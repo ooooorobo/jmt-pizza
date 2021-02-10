@@ -1,42 +1,44 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InfiniteGameManager: IGameManager
+public class InfiniteGameManager: GameChecker
 {
     public override void InitGame()
     {
-        clearPanel = Instantiate(infiniteClearPanelPrefab).transform;
+        clearPanel = Instantiate(clearPanelPrefab).transform;
         clearPanel.SetParent(canvas.transform);
         clearPanel.localScale = new Vector3(1, 1, 1);
         
+        gameManager = IGameManager.Instance();
+
         spawnerFactory = GetComponent<SpawnerFactory>()
             .GetSpawnerStrategyByMode(gameObject, Environment.StageMode.ORIGINAL);
-        spawnerFactory.InitFactory(Environment.InfiniteToppingSpawnDelay, centerPosition, tileSize,
+        spawnerFactory.InitFactory(Environment.InfiniteToppingSpawnDelay, gameManager.centerPosition, gameManager.tileSize,
             Environment.InfiniteXToppingCount);
         spawnerFactory.AttachSpawner(gameObject);
-        
-        toppingCounts = new int[Environment.InfiniteToppingTotalCount];
+
+        gameManager.spawnerFactory = spawnerFactory;
 
     }
 
     public override void CheckGameOver()
     {
-        if (score < Environment.InfiniteScoreMinimum)
+        if (gameManager.score < Environment.InfiniteScoreMinimum)
         {
-            GameOver();
+            gameManager.GameOver();
         }
     }
 
     public override void CheckGameClear()
     {
-        if (goalToppingCount == Environment.InfiniteTargetToppingGoalMin && !ovenOpened)
+        if (gameManager.goalToppingCount == Environment.InfiniteTargetToppingGoalMin && !gameManager.ovenOpened)
         {
-            ovenOpened = true;
+            gameManager.ovenOpened = true;
             spawnerFactory.RequestSpawn(RequestEnum.OVEN, 1);
         }
     }
 
-    protected override void SetGameClearPanelUI()
+    public override void SetGameClearPanelUi()
     {
         clearPanel.gameObject.SetActive(true);
 
@@ -50,10 +52,12 @@ public class InfiniteGameManager: IGameManager
         restartBtn.onClick.AddListener(() => MyStageManager.RestartWithStatic());
         mainBtn.onClick.AddListener(() => MyStageManager.LoadSceneWithStatic("Lobby"));
         
-        clearScoreTxt.text = score + "₩";
+        clearScoreTxt.text = gameManager.score + "₩";
         
         // TODO:: Topping sprite, name 관리하는 무언가.. 만들기
         Sprite[] sprites = spawnerFactory.toppingSprites;
+
+        int[] toppingCounts = gameManager.toppingCounts;
 
         for (int i = 0; i < resultList.transform.childCount; i++)
         {
@@ -76,7 +80,7 @@ public class InfiniteGameManager: IGameManager
             }
         }
 
-        bestScoreTxt.text = userData.maxScore + "₩";
+        bestScoreTxt.text = gameManager.userData.maxScore + "₩";
 
     }
 }

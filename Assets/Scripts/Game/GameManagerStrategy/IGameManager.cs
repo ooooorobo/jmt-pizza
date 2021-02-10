@@ -1,27 +1,29 @@
+using System;
 using System.Collections;
 using Assets.Scripts.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class IGameManager : MonoBehaviour
+public class IGameManager : MonoBehaviour
 {
     private TileMaker tileMaker;
-    protected IDefaultSpawnerStrategy spawnerFactory;
+    public IDefaultSpawnerStrategy spawnerFactory;
     public JoystickController joyController;
-
+    private GameChecker gameChecker;
+    
     [Header("Player")] 
     public Player player;
     public GameObject playerPrefab;
 
     [Header("Board")] 
     public Transform centerPosition;
-    protected float tileSize;
+    public float tileSize;
 
     [Header("Score")] 
-    protected int score;
-    private int cheese;
-    protected bool ovenOpened = false;
-    protected int goalToppingCount = 0;
+    public int score;
+    public int cheese;
+    public bool ovenOpened = false;
+    public int goalToppingCount = 0;
     public int[] toppingCounts;
 
     [Header("Arrow")] public Button btnUp;
@@ -40,12 +42,8 @@ public abstract class IGameManager : MonoBehaviour
     public Text overTotalScore;
     public Text overReason;
 
-    [Header("Clear Panel")] 
-    public GameObject infiniteClearPanelPrefab;
-    protected Transform clearPanel;
-    
     [Header("Data")] 
-    protected UserData userData;
+    public UserData userData;
 
 
     private IEnumerator addGaugeCoroutine;
@@ -75,13 +73,20 @@ public abstract class IGameManager : MonoBehaviour
     {
         userData = (UserData) DataManager.GetDataFromJson<UserData>("userData");
         if (userData == null) userData = new UserData();
-        
+
+        StageLoader stageLoader = StageLoader.Instance();
+        Environment.GameMode gameMode = stageLoader ? stageLoader.mode : Environment.GameMode.INFINITE;
+        Environment.StageMode stageMode = stageLoader ? stageLoader.stageMode : Environment.StageMode.ORIGINAL;
+
+        GameCheckerFactory gameCheckerFactory = GetComponent<GameCheckerFactory>();
+        gameChecker = gameCheckerFactory.GetGameCheckerByMode(gameMode, stageMode, canvas);
+
         tileMaker = GetComponent<TileMaker>();
         tileMaker.MakeBoard(Environment.BoardRowCount, Environment.BoardColumnCount, centerPosition.position);
         tileSize = tileMaker.TileSize;
-        
+
         score = Environment.InfiniteInitialScore;
-        
+
         player = Instantiate(playerPrefab, centerPosition.position, Quaternion.identity).GetComponent<Player>();
         player.Init(tileSize, Environment.InfinitePlayerInitialSpeed, Environment.InfinitePlayerAccelerateSpeed,
             centerPosition.position);
@@ -92,13 +97,13 @@ public abstract class IGameManager : MonoBehaviour
         btnRight.onClick.AddListener(() => player.SetDirection("21"));
 
         joyController.Init(player);
+        
+        toppingCounts = new int[Environment.InfiniteToppingTotalCount];
 
-        InitGame();
+        gameChecker.InitGame();
     }
 
     // 게임 기본 세팅
-    public abstract void InitGame();
-
     public void GetTopping(Topping t)
     {
         toppingCounts[t.id] += 1;
@@ -131,7 +136,7 @@ public abstract class IGameManager : MonoBehaviour
             goalToppingCount++;
         }
 
-        CheckGameClear();
+        gameChecker.CheckGameClear();
     }
 
 
@@ -141,7 +146,7 @@ public abstract class IGameManager : MonoBehaviour
         score += change;
         txtScore.text = score + "￦";
 
-        CheckGameOver();
+        gameChecker.CheckGameOver();
     }
 
 
@@ -166,25 +171,19 @@ public abstract class IGameManager : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        player.StratMove();
+        player.StartMove();
         spawnerFactory.StartPeriodicSpawn();
     }
     
-    // 오븐 오픈 조건 확인
-    public abstract void CheckGameClear();
-    public abstract void CheckGameOver();
-
     // 게임 클리어 후 로직
     public void GameClear()
     {
         StopGame();
         userData.SaveClearData(score);
 
-        SetGameClearPanelUI();
+        gameChecker.SetGameClearPanelUi();
     }
-
-    protected abstract void SetGameClearPanelUI();
-
+    
     // 게임 오버 후 로직
     public void GameOver()
     {

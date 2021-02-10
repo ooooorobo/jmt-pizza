@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348942074}
+      - m_Target: {fileID: 1021314451330004465}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -2279,7 +2279,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1348942074}
+      - m_Target: {fileID: 0}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -3284,38 +3284,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333071296}
   m_CullTransparentMesh: 0
---- !u!114 &1348942074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021314451330004464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcf811ae1d6a34382b9d02116b323a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joyController: {fileID: 990184574}
-  player: {fileID: 0}
-  playerPrefab: {fileID: 8356817185706412598, guid: 308df295b1ba04281a4778e4be2155f4,
-    type: 3}
-  centerPosition: {fileID: 1539426819}
-  toppingCounts: 
-  btnUp: {fileID: 1099616673}
-  btnLeft: {fileID: 2064573163}
-  btnRight: {fileID: 786177178}
-  btnDown: {fileID: 263152845}
-  txtScore: {fileID: 4576091481072505183}
-  userCoin: {fileID: 4576091479844551638}
-  CheeseGauge: {fileID: 4576091479589741814}
-  canvas: {fileID: 990184573}
-  overPanel: {fileID: 510285973}
-  overBestScore: {fileID: 198709382}
-  overTotalScore: {fileID: 967140955}
-  overReason: {fileID: 106374321}
-  infiniteClearPanelPrefab: {fileID: 273471960323868208, guid: b9cccf68fd8774a5a91c65880dcb48f9,
-    type: 3}
 --- !u!114 &1348942078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3793,7 +3761,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1348942074}
+      - m_Target: {fileID: 0}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -4582,8 +4550,9 @@ GameObject:
   - component: {fileID: 1668705155773678127}
   - component: {fileID: 104046444733950244}
   - component: {fileID: 8474172794639309012}
-  - component: {fileID: 1348942074}
   - component: {fileID: 1348942078}
+  - component: {fileID: 1021314451330004465}
+  - component: {fileID: 1021314451330004466}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4591,6 +4560,62 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1021314451330004465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021314451330004464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f9ade49311e43f28e6c6ebbcfb3195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerFactory: {fileID: 0}
+  joyController: {fileID: 990184574}
+  player: {fileID: 0}
+  playerPrefab: {fileID: 8356817185706412598, guid: 308df295b1ba04281a4778e4be2155f4,
+    type: 3}
+  centerPosition: {fileID: 1539426819}
+  tileSize: 0
+  score: 0
+  cheese: 0
+  ovenOpened: 0
+  goalToppingCount: 0
+  toppingCounts: 
+  btnUp: {fileID: 1099616673}
+  btnLeft: {fileID: 2064573163}
+  btnRight: {fileID: 786177178}
+  btnDown: {fileID: 263152845}
+  txtScore: {fileID: 4576091481072505183}
+  userCoin: {fileID: 4576091479844551638}
+  CheeseGauge: {fileID: 4576091479589741814}
+  canvas: {fileID: 990184573}
+  overPanel: {fileID: 510285973}
+  overBestScore: {fileID: 198709382}
+  overTotalScore: {fileID: 967140955}
+  overReason: {fileID: 106374321}
+  userData:
+    maxScore: 0
+    clearCount: 0
+    coin: 0
+--- !u!114 &1021314451330004466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021314451330004464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd3fda3e1a62422b8b0e75b9c620cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infiniteClearPanel: {fileID: 273471960323868208, guid: b9cccf68fd8774a5a91c65880dcb48f9,
+    type: 3}
+  stageClearPanel: {fileID: 8525940631309304213, guid: d2e07534d5877448d86f3a81dfa74b4f,
+    type: 3}
 --- !u!4 &1668705155773678127
 Transform:
   m_ObjectHideFlags: 0
