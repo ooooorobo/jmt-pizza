@@ -22,8 +22,9 @@ public class GameCheckerFactory: MonoBehaviour
                 case Environment.StageMode.ORIGINAL:
                     gameChecker = gameObject.AddComponent<OriginalStageGameManager>();
                     break;
-                // case Environment.StageMode.AVOID:
-                    // gameChecker = obj.AddComponent<Avoi
+                case Environment.StageMode.AVOID:
+                    gameChecker = gameObject.AddComponent<AvoidStageGameChecker>();
+                    break;
                 default:
                     gameChecker = gameObject.AddComponent<OriginalStageGameManager>();
                     break;
