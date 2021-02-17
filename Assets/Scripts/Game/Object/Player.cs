@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : Tail
@@ -48,8 +49,16 @@ public class Player : Tail
     public void SetDirection(string dir) {
         int x = dir[0] - '1';
         int y = dir[1] - '1';
-
+        
         if (x != 0 || y != 0)
+        {
+            // 따닥 해서 뒤돌기 방지
+            int preX = Convert.ToInt32(preDirection.x);
+            if (x == preX || Math.Abs(x - preX) == 2)
+            {
+                return;
+            }
+
             if (x != 0)
             {
                 Vector3 temp = new Vector3(1f, 0, 0) * x;
@@ -71,6 +80,7 @@ public class Player : Tail
                 Arrow.localPosition = new Vector3(0, 0.232f, 0) * y;
                 Arrow.rotation = Quaternion.Euler(0, 0, 90 * (y - 1));
             }
+        }
     }
 
     private void Update()
