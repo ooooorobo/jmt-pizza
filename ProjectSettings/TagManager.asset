@@ -9,6 +9,7 @@ TagManager:
   - Oven
   - Obstacle
   - Coin
+  - Canvas
   layers:
   - Default
   - TransparentFX

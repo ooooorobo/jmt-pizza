@@ -37,6 +37,7 @@ public class IGameManager : MonoBehaviour
     public Text userCoin;
     public Image CheeseGauge;
     public Transform canvas;
+    public GameObject settingPanel;
 
     [Header("Over Panel")] public GameObject overPanel;
     public Text overBestScore;
@@ -147,6 +148,12 @@ public class IGameManager : MonoBehaviour
     {
         userData.SaveCoin(coin);
         userCoin.text = userData.coin.ToString();
+    }
+
+    public void PauseGame()
+    {
+        StopGame();
+        settingPanel.SetActive(true);
     }
     
     // 게임 일시정지 시

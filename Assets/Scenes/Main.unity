@@ -2465,7 +2465,7 @@ GameObject:
   - component: {fileID: 990184574}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2818,19 +2818,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599784133}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: Stop
+      - m_Target: {fileID: 1021314451330004465}
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3797,7 +3786,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1021314451330004465}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -4629,6 +4618,7 @@ MonoBehaviour:
   userCoin: {fileID: 4576091479844551638}
   CheeseGauge: {fileID: 4576091479589741814}
   canvas: {fileID: 990184573}
+  settingPanel: {fileID: 1599784133}
   overPanel: {fileID: 510285973}
   overBestScore: {fileID: 198709382}
   overTotalScore: {fileID: 967140955}
