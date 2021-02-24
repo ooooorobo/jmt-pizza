@@ -28,10 +28,10 @@ public class Environment
     public const int InfiniteToppingTotalCount = 10;
 
     // 플레이어 최초 시작 속도 - 한 칸 움직이는 데 걸리는 시간(초) 
-    public const float InfinitePlayerInitialSpeed = 0.2f;
+    public const float InfinitePlayerInitialSpeed = 0.25f;
     
     // 토핑 하나를 먹을 때마다, 플레이어 속도가 빨라지는 정도 - 원래 속도에서 곱연산
-    public const float InfinitePlayerAccelerateSpeed = 0.98f;
+    public const float InfinitePlayerAccelerateSpeed = 0.965f;
 
     // O 토핑 획득 시 점수 변화량
     public const int InfiniteOToppingScore = 400;
@@ -43,10 +43,10 @@ public class Environment
     public const int InfiniteXToppingCount = 4;
     
     // 토핑 스폰 딜레이 (하나의 토핑이 생성된 후, n초 뒤에 다음 토핑 생성)
-    public const float InfiniteToppingSpawnDelay = 2f;
+    public const float InfiniteToppingSpawnDelay = 3f;
     
     // 토핑 표시 시간 (토핑이 생성된 후, n초 뒤에 사라짐)
-    public const float InfiniteToppingDestroyDelay = 3f;
+    public const float InfiniteToppingDestroyDelay = 7f;
     
     // 게임 오버 한도 점수 (이 점수 이하면 게임 오버 됩니다)
     public const int InfiniteScoreMinimum = 0;
