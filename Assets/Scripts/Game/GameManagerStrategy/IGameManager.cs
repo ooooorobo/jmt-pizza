@@ -97,6 +97,12 @@ public class IGameManager : MonoBehaviour
         btnDown.onClick.AddListener(() => player.SetDirection("10"));
         btnLeft.onClick.AddListener(() => player.SetDirection("01"));
         btnRight.onClick.AddListener(() => player.SetDirection("21"));
+        
+        // 버튼의 불투명한 부분만 클릭 범위로 설정함
+        btnUp.GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
+        btnDown.GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
+        btnLeft.GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
+        btnRight.GetComponent<Image>().alphaHitTestMinimumThreshold = 1f;
 
         joyController.Init(player);
         
